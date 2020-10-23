@@ -24,8 +24,9 @@ Parameter::Parameter(const QString name, int number, int min, int max)
     m_LCDNumber->setSegmentStyle(QLCDNumber::Flat);
     m_LCDNumber->display(number);
 
-    connect(m_slider, SIGNAL(valueChanged(int)), m_LCDNumber, SLOT(display(int)));
-    connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(setValue(int)));
+    connect(m_slider, static_cast<void (QSlider::*)(int)>(&QSlider::valueChanged),
+            m_LCDNumber, static_cast<void (QLCDNumber::*)(int)>(&QLCDNumber::display));
+    connect(m_slider, &QSlider::valueChanged, this, &Parameter::setValue);
 }
 
 int Parameter::getValue()
