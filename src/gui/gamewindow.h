@@ -53,7 +53,7 @@ private:
 
     Game* m_game;
 
-    void initializeAttributes(int width, int height, int mineNumber);
+    void initializeAttributes(int width, int height);
     void initializeLayout();
 
     void placeMines(int width, int height);

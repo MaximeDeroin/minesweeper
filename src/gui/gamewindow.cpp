@@ -7,7 +7,7 @@ GameWindow::GameWindow(int width, int height, int mineNumber):
 {
     setFixedSize(30*width,30*height);
 
-    initializeAttributes(width, height, mineNumber);
+    initializeAttributes(width, height);
 
     initializeLayout();
 }
@@ -45,7 +45,7 @@ void GameWindow::squareClicked(int i, int j)
     repaintGame();
 }
 
-void GameWindow::initializeAttributes(int width, int height, int mineNumber)
+void GameWindow::initializeAttributes(int width, int height)
 {
     m_gameWidth = width;
     m_gameHeight = height;
