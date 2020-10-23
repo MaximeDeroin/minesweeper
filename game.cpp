@@ -1,10 +1,7 @@
 #include "game.h"
 
-
-//Game::Game()
-//{
-
-//}
+#include<cstdlib> // for rand
+#include<ctime> // for rand
 
 Game::Game(int width, int height, int mineNumber):
     m_started(false),
@@ -16,6 +13,8 @@ Game::Game(int width, int height, int mineNumber):
     m_gameState(Game::GameState::ONGOING),
     m_cellGrid(QVector<Cell*>())
 {
+    std::srand(std::time(0));
+
     for (int i=0; i<height; i++)
        for (int j=0; j<width; j++)
        {

@@ -64,5 +64,4 @@ void MenuWindow::connectMenuButtons()
 {
     connect(m_playButton, SIGNAL(clicked()), this, SLOT(startAGame()));
     connect(m_quitButton,SIGNAL(clicked()), qApp, SLOT(quit()));
-
 }

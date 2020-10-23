@@ -7,7 +7,6 @@ SOURCES += \
     gamewindow.cpp \
     square.cpp \
     cell.cpp \
-    grid.cpp \
     game.cpp
 
 HEADERS += \
@@ -16,5 +15,4 @@ HEADERS += \
     gamewindow.h \
     square.h \
     cell.h \
-    grid.h \
     game.h

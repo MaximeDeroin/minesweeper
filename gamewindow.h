@@ -8,10 +8,6 @@
 #include <QVBoxLayout>
 #include <QGridLayout>
 
-#include<cstdlib> // for rand
-#include<ctime> // for rand
-
-
 #include <iostream>
 
 #include "square.h"
@@ -43,23 +39,17 @@ private:
     int m_gameWidth;
     int m_gameHeight;
     int m_gameMineNumber;
-//    int m_discoveredSquares;
 
     /**
-     * @brief stores the game in a 1D vector.
-     * In the game array, the element in position (x,y) will be in position
+     * @brief stores the game buttons in a 1D vector.
+     * In the buttons array, the element in position (x,y) will be in position
      * x*m_gameWidth+y in the vector
      * @note indices go from 0 to m_gameWidth*m_gameHeight - 1 after the
      * vector is initialized
      */
-//    std::vector<Square*> m_gameGrid;
-
     QVector<Square*> m_buttons;
 
     QGridLayout* m_gameLayout;
-
-//    bool gameStarted;
-//    bool gameFinished;
 
     Game* m_game;
 
@@ -67,7 +57,6 @@ private:
     void initializeLayout();
 
     void placeMines(int width, int height);
-    //void play(int width, int height);
 
     void computeAdjacentMineNumbers();
     int computeAdjacentMines(int i, int j);

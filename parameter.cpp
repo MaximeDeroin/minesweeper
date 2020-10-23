@@ -1,10 +1,13 @@
 #include "parameter.h"
 
 Parameter::Parameter(QWidget *parent) : QWidget(parent)
-{}
+{
+
+}
 
 Parameter::~Parameter()
 {
+
 }
 
 Parameter::Parameter(const QString name, int number, int min, int max)
@@ -23,7 +26,6 @@ Parameter::Parameter(const QString name, int number, int min, int max)
 
     connect(m_slider, SIGNAL(valueChanged(int)), m_LCDNumber, SLOT(display(int)));
     connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(setValue(int)));
-
 }
 
 int Parameter::getValue()
@@ -44,4 +46,3 @@ QHBoxLayout* Parameter::getParameterLayout()
     layout->addWidget(m_LCDNumber);
     return layout;
 }
-

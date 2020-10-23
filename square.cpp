@@ -1,11 +1,5 @@
 #include "square.h"
 
-
-/*Square::Square(QObject *parent)
-{
-
-}*/
-
 Square::Square(int width, int height, const QString& initialText)
 {
     m_width = width;
@@ -34,9 +28,3 @@ void Square::onClicked()
 {
     emit clicked(m_width, m_height);
 }
-
-/* voidsetButton()
-{
-    return this->m_button;
-}
-*/
