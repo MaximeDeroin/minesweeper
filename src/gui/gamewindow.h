@@ -12,8 +12,8 @@
 
 #include "square.h"
 
-#include "game.h"
-#include "cell.h"
+#include "../data/game.h"
+#include "../data/cell.h"
 
 class GameWindow : public QWidget
 {

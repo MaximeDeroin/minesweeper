@@ -2,8 +2,6 @@
 #define GAME_H
 
 #include "cell.h"
-
-
 #include <QVector>
 
 class Game
