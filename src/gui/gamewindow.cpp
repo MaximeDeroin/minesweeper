@@ -34,12 +34,12 @@ void GameWindow::squareClicked(int i, int j)
 
     if(m_game->gameState() == Game::GameState::LOST)
     {
-        QMessageBox::information(this, "Raté", "Vous avez perdu...");
+        QMessageBox::information(this, "Mine!", "You lost the game...");
 
     }
     else if (m_game->gameState() == Game::GameState::WON)
     {
-        QMessageBox::information(this, "Victoire", "Vous avez gagné !");
+        QMessageBox::information(this, "Victory", "You won the game!");
     }
 
     repaintGame();
