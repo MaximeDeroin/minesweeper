@@ -6,15 +6,13 @@
 
 }*/
 
-Square::Square(int width, int height, bool hasMine)
+Square::Square(int width, int height, const QString& initialText)
 {
     m_width = width;
     m_height = height;
-    m_hasMine = hasMine;
-    m_neighborNumber = -1;
 
-    m_button = new QPushButton("-");
-    connect(m_button, SIGNAL(clicked(bool)), this, SLOT(onClicked()));
+    m_button = new QPushButton(initialText);
+    connect(m_button, &QPushButton::clicked, this, &Square::onClicked);
 }
 
 Square::~Square()
@@ -22,28 +20,7 @@ Square::~Square()
     delete m_button;
 }
 
-
-void Square::setHasMine(bool value)
-{
-    m_hasMine = value;
-}
-
-bool Square::getHasMine() const
-{
-    return m_hasMine;
-}
-
-void Square::setNeighborNumber(int value)
-{
-    m_neighborNumber = value;
-}
-
-int Square::getNeighborNumber() const
-{
-    return m_neighborNumber;
-}
-
-QPushButton* Square::getButton() const
+QPushButton* Square::button() const
 {
     return this->m_button;
 }

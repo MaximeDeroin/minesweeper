@@ -9,19 +9,11 @@ class Square : public QObject
     Q_OBJECT
 public:
 
-    //Square(QObject* parent=0);
-    Square(int width, int height, bool hasMine=false);
+    Square(int width, int height, const QString &initialText = "-");
     virtual ~Square();
 
-    void setHasMine(bool value);
-    bool getHasMine() const;
-
-    void setNeighborNumber(int value);
-    int getNeighborNumber() const;
-
-    QPushButton* getButton() const;
+    QPushButton* button() const;
     void setButton(const QString & newCharacter);
-
 
 public slots:
     void onClicked();
@@ -31,12 +23,8 @@ signals:
 private:
     int m_width;
     int m_height;
-    bool m_hasMine;
-
-    int m_neighborNumber;
 
     QPushButton* m_button;
-
 };
 
 #endif // SQUARE_H

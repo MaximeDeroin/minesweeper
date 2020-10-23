@@ -16,11 +16,13 @@
 
 #include "square.h"
 
+#include "game.h"
+#include "cell.h"
+
 class GameWindow : public QWidget
 {
     Q_OBJECT
 public:
-    explicit GameWindow(QWidget *parent = 0);
     /**
      * @brief GameWindow create a game with the parameters in argument
      * @param width width of the game grid
@@ -29,7 +31,9 @@ public:
      * @warning requires that the number of mine is compatible, there must be at least 1 mine and
      * one empty square in the grid (width*height < mineNumber
      */
-    GameWindow(int width, int height, int mineNumber);
+    explicit GameWindow(int width, int height, int mineNumber);
+
+    virtual ~GameWindow();
 
 signals:
 
@@ -39,7 +43,7 @@ private:
     int m_gameWidth;
     int m_gameHeight;
     int m_gameMineNumber;
-    int m_discoveredSquares;
+//    int m_discoveredSquares;
 
     /**
      * @brief stores the game in a 1D vector.
@@ -48,13 +52,16 @@ private:
      * @note indices go from 0 to m_gameWidth*m_gameHeight - 1 after the
      * vector is initialized
      */
-    std::vector<Square*> m_gameGrid;
+//    std::vector<Square*> m_gameGrid;
+
+    QVector<Square*> m_buttons;
 
     QGridLayout* m_gameLayout;
 
-    bool gameStarted;
-    bool gameFinished;
+//    bool gameStarted;
+//    bool gameFinished;
 
+    Game* m_game;
 
     void initializeAttributes(int width, int height, int mineNumber);
     void initializeLayout();

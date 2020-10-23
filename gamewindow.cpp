@@ -1,12 +1,10 @@
 #include "gamewindow.h"
 #include <iostream>
 
-GameWindow::GameWindow(QWidget *parent) : QWidget(parent)
-{
 
-}
-
-GameWindow::GameWindow(int width, int height, int mineNumber)
+GameWindow::GameWindow(int width, int height, int mineNumber):
+    m_game(new Game(width, height, mineNumber)),
+    m_buttons(QVector<Square*>())
 {
     setFixedSize(30*width,30*height);
 
@@ -17,28 +15,39 @@ GameWindow::GameWindow(int width, int height, int mineNumber)
     std::srand(std::time(0));
 }
 
+GameWindow::~GameWindow()
+{
+    for (Square* s: m_buttons)
+    {
+        delete s;
+    }
+}
+
 void GameWindow::squareClicked(int i, int j)
 {
-    if (gameFinished)
+    if (m_game->finished())
         return;
 
-    if (!gameStarted) {
-        placeMines(i, j);
-        computeAdjacentMineNumbers();
-        gameStarted = true;
+    if (!m_game->started())
+    {
+        m_game->startGame(i, j);
+//        placeMines(i, j);
+//        computeAdjacentMineNumbers();
+//        gameStarted = true;
     }
 
-    discover(i,j);
-    if(hasMine(i, j)) {
-        gameFinished = true;
-        setButtonText(i, j, "*");
+    m_game->discover(i,j);
+
+    if(m_game->gameState() == Game::GameState::LOST)
+    {
+//        setButtonText(i, j, "*");
         QMessageBox::information(this, "Raté", "Vous avez perdu...");
 
-    } else if (m_discoveredSquares == m_gameMineNumber) {
-        gameFinished = true;
+    }
+    else if (m_game->gameState() == Game::GameState::WON)
+    {
         QMessageBox::information(this, "Victoire", "Vous avez gagné !");
     }
-
 
     repaintGame();
 }
@@ -47,175 +56,144 @@ void GameWindow::initializeAttributes(int width, int height, int mineNumber)
 {
     m_gameWidth = width;
     m_gameHeight = height;
-    m_gameMineNumber = mineNumber;
-    m_discoveredSquares = width*height;
+//    m_gameMineNumber = mineNumber;
+//    m_discoveredSquares = width*height;
 
-    gameStarted = false;
-    gameFinished = false;
+//    gameStarted = false;
+//    gameFinished = false;
 
-    for (int i=0; i<m_gameHeight; i++)
-       for (int j=0; j<m_gameWidth; j++) {
-           Square* initialSquare = new Square(i, j, false);
-           m_gameGrid.push_back(initialSquare);
-       }
+//    for (int i=0; i<m_gameHeight; i++)
+//       for (int j=0; j<m_gameWidth; j++) {
+//           Square* initialSquare = new Square(i, j, false);
+//           m_gameGrid.push_back(initialSquare);
+//       }
 }
 
 void GameWindow::initializeLayout()
 {
     m_gameLayout = new QGridLayout();
 
-
-
     for (int i=0; i<m_gameHeight; i++)
         for (int j=0; j<m_gameWidth; j++){
+            Square* button = new Square(i, j, "-");
+            m_buttons.push_back(button);
+            m_gameLayout->addWidget(button->button(), i, j);
 
-            Square* currentSquare = m_gameGrid[i*m_gameWidth+j];
-            //int index = i*m_gameWidth+j;
+            connect(button, &Square::clicked, this, &GameWindow::squareClicked);
+//            Square* currentSquare = m_gameGrid[i*m_gameWidth+j];
+//            //int index = i*m_gameWidth+j;
 
-            m_gameLayout->addWidget(currentSquare->getButton(), i, j);
-            //connect(&currentSquare, SIGNAL(clicked()), this, SLOT()  )
+//            m_gameLayout->addWidget(currentSquare->getButton(), i, j);
+//            //connect(&currentSquare, SIGNAL(clicked()), this, SLOT()  )
 
-            connect(currentSquare, SIGNAL(clicked(int, int)), this, SLOT(squareClicked(int,int)));
+//            connect(currentSquare, SIGNAL(clicked(int, int)), this, SLOT(squareClicked(int,int)));
 
         }
 
     this->setLayout(m_gameLayout);
 }
 
-void GameWindow::placeMines(int i, int j)
-{
-    int numberOfSquares = m_gameWidth*m_gameHeight;
-    int numberOfMinePlaced = 0;
-    int squareClicked = i*m_gameWidth + j;
+//void GameWindow::placeMines(int i, int j)
+//{
+//    int numberOfSquares = m_gameWidth*m_gameHeight;
+//    int numberOfMinePlaced = 0;
+//    int squareClicked = i*m_gameWidth + j;
 
-    while (numberOfMinePlaced != m_gameMineNumber) {
-        int randomNumber = std::rand() % numberOfSquares;
-        std::cout << "randomNumber: " << randomNumber << std::endl;
-        if (randomNumber != squareClicked) {
-            if(m_gameGrid[randomNumber]->getHasMine()==false){
-                m_gameGrid[randomNumber]->setHasMine(true);
-                numberOfMinePlaced++;
-            }
-        }
-    }
-}
+//    while (numberOfMinePlaced != m_gameMineNumber) {
+//        int randomNumber = std::rand() % numberOfSquares;
+//        std::cout << "randomNumber: " << randomNumber << std::endl;
+//        if (randomNumber != squareClicked) {
+//            if(m_gameGrid[randomNumber]->getHasMine()==false){
+//                m_gameGrid[randomNumber]->setHasMine(true);
+//                numberOfMinePlaced++;
+//            }
+//        }
+//    }
+//}
 
-void GameWindow::computeAdjacentMineNumbers() {
-    for (int i=0; i<m_gameHeight; i++)
-        for (int j=0; j<m_gameWidth; j++) {
-            if (!(hasMine(i,j))) {
-                int adjacentMines = computeAdjacentMines(i,j);
+//void GameWindow::computeAdjacentMineNumbers() {
+//    for (int i=0; i<m_gameHeight; i++)
+//        for (int j=0; j<m_gameWidth; j++) {
+//            if (!(hasMine(i,j))) {
+//                int adjacentMines = computeAdjacentMines(i,j);
 
-                setNeighborNumber(i,j,adjacentMines);
-            }
-        }
-}
+//                setNeighborNumber(i,j,adjacentMines);
+//            }
+//        }
+//}
 
-int GameWindow::computeAdjacentMines(int i, int j) {
-    int neighborsNumber = 0;
-    if (hasMine(i-1, j-1))
-        neighborsNumber++;
-    if (hasMine(i, j-1))
-        neighborsNumber++;
-    if (hasMine(i+1, j-1))
-        neighborsNumber++;
-    if (hasMine(i-1, j))
-        neighborsNumber++;
-    if (hasMine(i+1, j))
-        neighborsNumber++;
-    if (hasMine(i-1, j+1))
-        neighborsNumber++;
-    if (hasMine(i, j+1))
-        neighborsNumber++;
-    if (hasMine(i+1, j+1))
-        neighborsNumber++;
+//int GameWindow::computeAdjacentMines(int i, int j) {
+//    int neighborsNumber = 0;
+//    if (hasMine(i-1, j-1))
+//        neighborsNumber++;
+//    if (hasMine(i, j-1))
+//        neighborsNumber++;
+//    if (hasMine(i+1, j-1))
+//        neighborsNumber++;
+//    if (hasMine(i-1, j))
+//        neighborsNumber++;
+//    if (hasMine(i+1, j))
+//        neighborsNumber++;
+//    if (hasMine(i-1, j+1))
+//        neighborsNumber++;
+//    if (hasMine(i, j+1))
+//        neighborsNumber++;
+//    if (hasMine(i+1, j+1))
+//        neighborsNumber++;
 
-    return neighborsNumber;
-}
+//    return neighborsNumber;
+//}
 
-QString GameWindow::getButtonText(int i, int j) const {
-    return m_gameGrid[i*m_gameWidth+j]->getButton()->text();
-}
+//void GameWindow::discover(int i, int j) {
+//    if (!isInBoard(i,j))
+//        return;
+//    if (getButtonText(i,j) != "-")
+//        return;
 
-void GameWindow::setButtonText(int i, int j, int mineNumber) {
-    if (mineNumber == 0) {
-        m_gameGrid[i*m_gameWidth+j]->getButton()->setText(" ");
-    } else {
-        m_gameGrid[i*m_gameWidth+j]->getButton()->setText(QString::number(mineNumber));
-    }
-} 
-void GameWindow::setButtonText(int i, int j, QString text) {
-    m_gameGrid[i*m_gameWidth+j]->getButton()->setText(text);
-}
+//    m_discoveredSquares--;
+//    setButtonText(i,j, getNeighborNumber(i,j));
 
-void GameWindow::setNeighborNumber(int i, int j, int neighborNumber) {
-    m_gameGrid[i*m_gameWidth+j]->setNeighborNumber(neighborNumber);
-}
-
-int GameWindow::getNeighborNumber(int i, int j) {
-    return m_gameGrid[i*m_gameWidth+j]->getNeighborNumber();
-}
-
-void GameWindow::discover(int i, int j) {
-    if (!isInBoard(i,j))
-        return;
-    if (getButtonText(i,j) != "-")
-        return;
-
-    m_discoveredSquares--;
-    setButtonText(i,j, getNeighborNumber(i,j));
-
-    if (getNeighborNumber(i, j) == 0) {
-        discover(i-1, j-1);
-        discover(i, j-1);
-        discover(i+1, j-1);
-        discover(i-1, j);
-        discover(i+1, j);
-        discover(i-1, j+1);
-        discover(i, j+1);
-        discover(i+1, j+1);
-    }
-}
-
-
-void GameWindow::paintInitialGame()
-{
-    for (int i=0; i<m_gameHeight; i++)
-        for (int j=0; j<m_gameWidth; j++) {
-            int index = i*m_gameWidth+j;
-            if (m_gameGrid[index]->getHasMine()) {
-                m_gameGrid[index]->getButton()->setText("*");
-            } else {
-                m_gameGrid[index]->getButton()->setText(" ");
-            }
-            m_gameGrid[index]->getButton()->repaint();
-        }
-
-}
+//    if (getNeighborNumber(i, j) == 0) {
+//        discover(i-1, j-1);
+//        discover(i, j-1);
+//        discover(i+1, j-1);
+//        discover(i-1, j);
+//        discover(i+1, j);
+//        discover(i-1, j+1);
+//        discover(i, j+1);
+//        discover(i+1, j+1);
+//    }
+//}
 
 void GameWindow::repaintGame()
 {
     for (int i=0; i<m_gameHeight; i++)
-        for (int j=0; j<m_gameWidth; j++) {
+        for (int j=0; j<m_gameWidth; j++)
+        {
             int index = i*m_gameWidth+j;
-            m_gameGrid[index]->getButton()->repaint();
+            QPushButton* button = m_buttons[index]->button();
+            button->setText(m_game->textToPrint(i, j));
+            button->repaint();
         }
 }
 
 
-bool GameWindow::hasMine(int i, int j) const{
-    //std::cout << i << "; " << j << "; "<<m_gameGrid[i*m_gameWidth+j]->getHasMine()<<std::endl;
-    if (isInBoard(i,j)) {
-        return m_gameGrid[i*m_gameWidth+j]->getHasMine();
-    } else {
-        return false;
-    }
-}
+//bool GameWindow::hasMine(int i, int j) const{
+//    //std::cout << i << "; " << j << "; "<<m_gameGrid[i*m_gameWidth+j]->getHasMine()<<std::endl;
+//    if (isInBoard(i,j)) {
+//        return m_gameGrid[i*m_gameWidth+j]->getHasMine();
+//    } else {
+//        return false;
+//    }
+//}
 
-bool GameWindow::isInBoard (int i, int j) const{
-    if (i>=0 && i<m_gameHeight)
-        if(j>=0 && j<m_gameWidth)
-            return true;
+//bool GameWindow::isInBoard (int i, int j) const{
+//    if (i>=0 && i<m_gameHeight)
+//        if(j>=0 && j<m_gameWidth)
+//            return true;
 
-    return false;
-}
+//    return false;
+//}
+
+
+
