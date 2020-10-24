@@ -1,0 +1,5 @@
+-rename Square class to show its graphic
+-implement right click (override MouseEvent with QPushButton derivation)
+-add mine logo
+-comment all .h
+-change color in function of number
