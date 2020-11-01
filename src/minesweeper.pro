@@ -6,8 +6,8 @@ SOURCES += \
     gui/gamewindow.cpp \
     gui/menuwindow.cpp \
     gui/parameter.cpp \
-    gui/square.cpp \
-    main.cpp
+    main.cpp \
+    gui/squarewidget.cpp
 
 HEADERS += \
     data/cell.h \
@@ -15,4 +15,4 @@ HEADERS += \
     gui/gamewindow.h \
     gui/menuwindow.h \
     gui/parameter.h \
-    gui/square.h
+    gui/squarewidget.h

@@ -2,7 +2,7 @@
 #include <iostream>
 
 GameWindow::GameWindow(int width, int height, int mineNumber):
-    m_buttons(QVector<Square*>()),
+    m_buttons(QVector<SquareWidget*>()),
     m_game(new Game(width, height, mineNumber))
 {
     setFixedSize(30*width,30*height);
@@ -14,7 +14,7 @@ GameWindow::GameWindow(int width, int height, int mineNumber):
 
 GameWindow::~GameWindow()
 {
-    for (Square* s: m_buttons)
+    for (SquareWidget* s: m_buttons)
     {
         delete s;
     }
@@ -57,11 +57,11 @@ void GameWindow::initializeLayout()
 
     for (int i=0; i<m_gameHeight; i++)
         for (int j=0; j<m_gameWidth; j++){
-            Square* button = new Square(i, j, "-");
+            SquareWidget* button = new SquareWidget(i, j, "-");
             m_buttons.push_back(button);
             m_gameLayout->addWidget(button->button(), i, j);
 
-            connect(button, &Square::clicked, this, &GameWindow::squareClicked);
+            connect(button, &SquareWidget::clicked, this, &GameWindow::squareClicked);
         }
 
     this->setLayout(m_gameLayout);

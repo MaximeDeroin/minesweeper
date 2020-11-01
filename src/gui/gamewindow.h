@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-#include "square.h"
+#include "squarewidget.h"
 
 #include "../data/game.h"
 #include "../data/cell.h"
@@ -47,7 +47,7 @@ private:
      * @note indices go from 0 to m_gameWidth*m_gameHeight - 1 after the
      * vector is initialized
      */
-    QVector<Square*> m_buttons;
+    QVector<SquareWidget*> m_buttons;
 
     QGridLayout* m_gameLayout;
 

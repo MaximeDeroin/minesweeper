@@ -4,13 +4,13 @@
 #include <QPushButton>
 #include <QObject>
 
-class Square : public QObject
+class SquareWidget : public QObject
 {
     Q_OBJECT
 public:
 
-    Square(int width, int height, const QString &initialText = "-");
-    virtual ~Square();
+    SquareWidget(int width, int height, const QString &initialText = "-");
+    virtual ~SquareWidget();
 
     QPushButton* button() const;
     void setButton(const QString & newCharacter);
