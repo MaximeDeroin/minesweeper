@@ -76,7 +76,9 @@ void GameWindow::repaintGame()
         {
             int index = i*m_gameWidth+j;
             QPushButton* button = m_buttons[index]->button();
-            button->setText(m_game->textToPrint(i, j));
+            QString styleSheet;
+            button->setText(m_game->textToPrint(i, j, styleSheet));
+            button->setStyleSheet(styleSheet);
             button->setDisabled(m_game->cellIsDiscovered(i, j));
             button->repaint();
         }

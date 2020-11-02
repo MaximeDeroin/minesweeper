@@ -2,6 +2,7 @@
 #define CELL_H
 
 #include <QString>
+#include <QColor>
 
 /**
  * @brief Stores info of a cell
@@ -24,13 +25,15 @@ public:
 
     void sendSignal();
 
-    QString textToPrint();
+    QString textToPrint(QString &styleSheet);
 
 private:
     bool m_hasMine;
     int m_numberOfAdjacentMines;
     bool m_isFlagged;
     bool m_isDiscovered;
+
+    QColor textColor();
 };
 
 #endif // CELL_H

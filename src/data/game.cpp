@@ -161,9 +161,9 @@ void Game::discover(int i, int j)
     }
 }
 
-QString Game::textToPrint(int i, int j)
+QString Game::textToPrint(int i, int j, QString& styleSheet)
 {
-    return m_cellGrid[i*m_width+j]->textToPrint();
+    return m_cellGrid[i*m_width+j]->textToPrint(styleSheet);
 }
 
 bool Game::cellIsDiscovered(int i, int j)

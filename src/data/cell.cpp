@@ -44,8 +44,9 @@ void Cell::setIsDiscovered(bool isDiscovered)
     m_isDiscovered = isDiscovered;
 }
 
-QString Cell::textToPrint()
+QString Cell::textToPrint(QString& styleSheet)
 {
+    styleSheet = "font-size: 14pt;font-weight: bold";
     if (m_isDiscovered)
     {
         if (m_hasMine == true)
@@ -54,6 +55,8 @@ QString Cell::textToPrint()
         }
         else if (m_numberOfAdjacentMines >= 1)
         {
+            QColor col(textColor());
+            styleSheet += QString("; color: %1").arg(col.name());
             return QString::number(m_numberOfAdjacentMines);
         }
         else
@@ -72,4 +75,39 @@ QString Cell::textToPrint()
             return QString(" ");
         }
     }
+}
+
+QColor Cell::textColor()
+{
+    QColor textColor(Qt::black);
+    switch(m_numberOfAdjacentMines)
+    {
+        case 1:
+            textColor = Qt::blue;
+            break;
+        case 2:
+            textColor = Qt::darkGreen;
+            break;
+        case 3:
+            textColor = Qt::red;
+            break;
+        case 4:
+            textColor = Qt::darkBlue;
+            break;
+        case 5:
+            textColor = Qt::darkMagenta;
+            break;
+        case 6:
+            textColor = Qt::darkCyan;
+            break;
+        case 7:
+            textColor = Qt::darkYellow;
+            break;
+        case 8:
+            textColor = Qt::gray;
+            break;
+        default:
+            break;
+    }
+    return textColor;
 }

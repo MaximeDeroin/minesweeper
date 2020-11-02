@@ -32,7 +32,7 @@ public:
 
     void discover(int i, int j);
 
-    QString textToPrint(int i, int j);
+    QString textToPrint(int i, int j, QString &styleSheet);
 
     bool cellIsDiscovered(int i, int j);
 
