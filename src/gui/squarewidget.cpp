@@ -27,4 +27,5 @@ void SquareWidget::setButton(const QString & newCharacter)
 void SquareWidget::onClicked()
 {
     emit clicked(m_width, m_height);
+    m_button->setDisabled(true);
 }

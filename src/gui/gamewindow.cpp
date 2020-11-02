@@ -56,9 +56,11 @@ void GameWindow::initializeLayout()
     m_gameLayout = new QGridLayout();
 
     for (int i=0; i<m_gameHeight; i++)
-        for (int j=0; j<m_gameWidth; j++){
-            SquareWidget* button = new SquareWidget(i, j, "-");
+        for (int j=0; j<m_gameWidth; j++)
+        {
+            SquareWidget* button = new SquareWidget(i, j, " ");
             m_buttons.push_back(button);
+
             m_gameLayout->addWidget(button->button(), i, j);
 
             connect(button, &SquareWidget::clicked, this, &GameWindow::squareClicked);
@@ -75,6 +77,7 @@ void GameWindow::repaintGame()
             int index = i*m_gameWidth+j;
             QPushButton* button = m_buttons[index]->button();
             button->setText(m_game->textToPrint(i, j));
+            button->setDisabled(m_game->cellIsDiscovered(i, j));
             button->repaint();
         }
 }

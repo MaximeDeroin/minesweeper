@@ -34,6 +34,8 @@ public:
 
     QString textToPrint(int i, int j);
 
+    bool cellIsDiscovered(int i, int j);
+
 private:
     bool m_started;
     bool m_finished;

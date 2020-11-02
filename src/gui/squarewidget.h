@@ -2,7 +2,6 @@
 #define SQUARE_H
 
 #include <QPushButton>
-#include <QObject>
 
 class SquareWidget : public QObject
 {

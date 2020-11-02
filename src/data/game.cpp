@@ -166,6 +166,15 @@ QString Game::textToPrint(int i, int j)
     return m_cellGrid[i*m_width+j]->textToPrint();
 }
 
+bool Game::cellIsDiscovered(int i, int j)
+{
+    if (isInBoard(i,j))
+    {
+        return m_cellGrid[i*m_width+j]->isDiscovered();
+    }
+    return false;
+}
+
 int Game::getNeighborNumber(int i, int j)
 {
     return m_cellGrid[i*m_width+j]->numberOfAdjacentMines();

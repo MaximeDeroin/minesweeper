@@ -69,7 +69,7 @@ QString Cell::textToPrint()
         }
         else
         {
-            return QString("-");
+            return QString(" ");
         }
     }
 }
