@@ -5,7 +5,7 @@ GameWindow::GameWindow(int width, int height, int mineNumber):
     m_buttons(QVector<SquareWidget*>()),
     m_game(new Game(width, height, mineNumber))
 {
-    setFixedSize(30*width,30*height);
+    setFixedSize(30+30*width,30+30*height);
 
     initializeAttributes(width, height);
 

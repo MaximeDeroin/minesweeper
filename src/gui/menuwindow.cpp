@@ -29,8 +29,8 @@ void MenuWindow::startAGame()
 
 void MenuWindow::createParameters()
 {
-    m_gameWidth = new Parameter("Game Width", 10, 1,20);
-    m_gameHeight = new Parameter("Game Height", 10, 1, 20);
+    m_gameWidth = new Parameter("Game Width", 10, 5,20);
+    m_gameHeight = new Parameter("Game Height", 10, 5, 20);
     m_gameMineNumber = new Parameter("Mine Number", 10, 1, 20);
 }
 

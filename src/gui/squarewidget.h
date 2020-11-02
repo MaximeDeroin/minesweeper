@@ -1,7 +1,7 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-#include <QPushButton>
+#include "cellbutton.h"
 
 class SquareWidget : public QObject
 {
@@ -11,7 +11,7 @@ public:
     SquareWidget(int width, int height, const QString &initialText = "-");
     virtual ~SquareWidget();
 
-    QPushButton* button() const;
+    CellButton* button() const;
     void setButton(const QString & newCharacter);
 
 public slots:
@@ -23,7 +23,7 @@ private:
     int m_width;
     int m_height;
 
-    QPushButton* m_button;
+    CellButton* m_button;
 };
 
 #endif // SQUARE_H
