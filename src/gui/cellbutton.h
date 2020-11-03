@@ -10,11 +10,18 @@ class CellButton : public QPushButton
 public:
     CellButton(const QString &initialText);
 
+    void repaintButton(const QString& text, const QString& styleSheet, bool disable);
+
 private slots:
     void mousePressEvent(QMouseEvent *e);
 
 signals:
     void rightClicked();
+
+private:
+    void drawFlag();
+
+    int BUTTON_SIZE = 30;
 };
 
 #endif // CELLBUTTON_H

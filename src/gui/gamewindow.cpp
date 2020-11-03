@@ -6,6 +6,7 @@ GameWindow::GameWindow(int width, int height, int mineNumber):
     m_game(new Game(width, height, mineNumber))
 {
     setFixedSize(30+30*width,30+30*height);
+    this->setWindowIcon(QIcon(":/img/mine.png"));
 
     initializeAttributes(width, height);
 
@@ -105,12 +106,10 @@ void GameWindow::repaintGame()
     for (int i=0; i<m_gameHeight; i++)
         for (int j=0; j<m_gameWidth; j++)
         {
-            QPushButton* button = squareWidget(i,j)->button();
             QString styleSheet;
-            button->setText(m_game->textToPrint(i, j, styleSheet));
-            button->setStyleSheet(styleSheet);
-            button->setDisabled(m_game->cellIsDiscovered(i, j));
-            button->repaint();
+            QString text(m_game->textToPrint(i, j, styleSheet));
+            bool celltoDisable(m_game->cellIsDiscovered(i, j));
+            squareWidget(i,j)->button()->repaintButton(text, styleSheet, celltoDisable);
         }
 }
 

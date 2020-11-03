@@ -7,6 +7,7 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent)
 {
     setFixedSize(400,400);
     setWindowTitle("Minesweeper");
+    this->setWindowIcon(QIcon(":/img/mine.png"));
 
     this->createParameters();
     this->setMenu();

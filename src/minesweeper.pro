@@ -18,3 +18,6 @@ HEADERS += \
     gui/parameter.h \
     gui/squarewidget.h \
     gui/cellbutton.h
+
+RESOURCES += \
+    ../resources/images.qrc
