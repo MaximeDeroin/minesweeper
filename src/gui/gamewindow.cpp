@@ -20,17 +20,27 @@ GameWindow::~GameWindow()
     }
 }
 
-void GameWindow::squareClicked(int i, int j)
+void GameWindow::squareLeftClicked(int i, int j)
 {
     if (m_game->finished())
+    {
         return;
+    }
 
     if (!m_game->started())
     {
         m_game->startGame(i, j);
     }
 
-    m_game->discover(i,j);
+    bool gameEnds = m_game->discover(i,j);
+    if (gameEnds)
+    {
+        for (int i=0; i<m_gameHeight; i++)
+            for (int j=0; j<m_gameWidth; j++)
+            {
+                squareWidget(i,j)->disable();
+            }
+    }
 
     if(m_game->gameState() == Game::GameState::LOST)
     {
@@ -43,6 +53,26 @@ void GameWindow::squareClicked(int i, int j)
     }
 
     repaintGame();
+}
+
+void GameWindow::squareRightClicked(int i, int j)
+{
+    bool cellFlagged = m_game->flag(i,j);
+    squareWidget(i,j)->setIsClickable(!cellFlagged);
+    repaintGame();
+}
+
+SquareWidget* GameWindow::squareWidget(int i, int j)
+{
+    int index = i*m_gameWidth+j;
+    if (index >= 0 && index < m_gameWidth*m_gameHeight)
+    {
+        return m_buttons[index];
+    }
+    else
+    {
+        return nullptr;
+    }
 }
 
 void GameWindow::initializeAttributes(int width, int height)
@@ -63,7 +93,8 @@ void GameWindow::initializeLayout()
 
             m_gameLayout->addWidget(button->button(), i, j);
 
-            connect(button, &SquareWidget::clicked, this, &GameWindow::squareClicked);
+            connect(button, &SquareWidget::leftClicked, this, &GameWindow::squareLeftClicked);
+            connect(button, &SquareWidget::rightClicked, this, &GameWindow::squareRightClicked);
         }
 
     this->setLayout(m_gameLayout);
@@ -74,8 +105,7 @@ void GameWindow::repaintGame()
     for (int i=0; i<m_gameHeight; i++)
         for (int j=0; j<m_gameWidth; j++)
         {
-            int index = i*m_gameWidth+j;
-            QPushButton* button = m_buttons[index]->button();
+            QPushButton* button = squareWidget(i,j)->button();
             QString styleSheet;
             button->setText(m_game->textToPrint(i, j, styleSheet));
             button->setStyleSheet(styleSheet);
@@ -83,3 +113,4 @@ void GameWindow::repaintGame()
             button->repaint();
         }
 }
+

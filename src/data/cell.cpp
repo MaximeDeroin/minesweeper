@@ -44,6 +44,12 @@ void Cell::setIsDiscovered(bool isDiscovered)
     m_isDiscovered = isDiscovered;
 }
 
+bool Cell::changeFlagStatus()
+{
+    m_isFlagged = !m_isFlagged;
+    return m_isFlagged;
+}
+
 QString Cell::textToPrint(QString& styleSheet)
 {
     styleSheet = "font-size: 14pt;font-weight: bold";

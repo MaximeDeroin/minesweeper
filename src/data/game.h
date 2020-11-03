@@ -30,7 +30,15 @@ public:
 
     void startGame(int i, int j);
 
-    void discover(int i, int j);
+    /**
+     * @brief discover
+     * @param i
+     * @param j
+     * @return True if the discover action ends the game.
+     */
+    bool discover(int i, int j);
+
+    bool flag(int i, int j);
 
     QString textToPrint(int i, int j, QString &styleSheet);
 

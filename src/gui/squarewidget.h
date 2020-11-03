@@ -14,14 +14,22 @@ public:
     CellButton* button() const;
     void setButton(const QString & newCharacter);
 
+    void setIsClickable(bool isClickable);
+
+    void disable();
 public slots:
-    void onClicked();
+    void onLeftClicked();
+    void onRightClicked();
+
 signals:
-    void clicked(int, int);
+    void leftClicked(int width, int height);
+    void rightClicked(int width, int height);
 
 private:
     int m_width;
     int m_height;
+
+    bool m_isClickable;
 
     CellButton* m_button;
 };

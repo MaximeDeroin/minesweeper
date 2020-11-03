@@ -78,7 +78,11 @@ private:
     bool isInBoard(int i, int j) const;
 
 private slots:
-    void squareClicked(int width, int height);
+    void squareLeftClicked(int width, int height);
+    void squareRightClicked(int width, int height);
+
+private:
+    SquareWidget* squareWidget(int i, int j);
 
 };
 

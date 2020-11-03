@@ -14,7 +14,7 @@ class Parameter : public QWidget
     Q_OBJECT
 public:
     Parameter(QWidget *parent);
-    Parameter(QString name, int number, int min, int max);
+    Parameter(const QString &name, int number, int min, int max);
     virtual ~Parameter();
 
     QHBoxLayout* getParameterLayout();

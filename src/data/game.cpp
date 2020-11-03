@@ -124,18 +124,18 @@ void Game::setAdjacentMinesNumber(int i, int j, int neighborNumber)
     m_cellGrid[i*m_width+j]->setNumberOfAdjacentMines(neighborNumber);
 }
 
-void Game::discover(int i, int j)
-{
+bool Game::discover(int i, int j)
+{    
     if (m_gameState != Game::GameState::ONGOING)
-        return;
+        return false;
 
     if (!isInBoard(i,j))
-        return;
+        return false;
 
     Cell* clickedCell = cell(i, j);
 
     if (clickedCell->isDiscovered() || cell(i, j)->isFlagged())
-        return;
+        return false;
 
     clickedCell->setIsDiscovered(true);
     m_undiscoveredSquares--;
@@ -143,22 +143,41 @@ void Game::discover(int i, int j)
     if (clickedCell->hasMine())
     {
         m_gameState = Game::GameState::LOST;
+        return true;
     }
     else if (m_undiscoveredSquares == m_mineNumber)
     {
         m_gameState = Game::GameState::WON;
+        return true;
     }
 
-    if (getNeighborNumber(i, j) == 0) {
-        discover(i-1, j-1);
-        discover(i, j-1);
-        discover(i+1, j-1);
-        discover(i-1, j);
-        discover(i+1, j);
-        discover(i-1, j+1);
-        discover(i, j+1);
-        discover(i+1, j+1);
+    if (getNeighborNumber(i, j) == 0)
+    {
+        return
+                (discover(i-1, j-1)
+        || discover(i, j-1)
+        || discover(i+1, j-1)
+        || discover(i-1, j)
+        || discover(i+1, j)
+        || discover(i-1, j+1)
+        || discover(i, j+1)
+        || discover(i+1, j+1));
     }
+
+    return false;
+}
+
+bool Game::flag(int i, int j)
+{
+    bool cellIsNowFlagged = false;
+    Cell* clickedCell = cell(i, j);
+
+    if (!clickedCell->isDiscovered())
+    {
+        cellIsNowFlagged = clickedCell->changeFlagStatus();
+    }
+
+    return cellIsNowFlagged;
 }
 
 QString Game::textToPrint(int i, int j, QString& styleSheet)
@@ -208,4 +227,3 @@ Cell* Game::cell(int i, int j) const
         return nullptr;
     }
 }
-

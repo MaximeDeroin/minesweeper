@@ -10,7 +10,7 @@ Parameter::~Parameter()
 
 }
 
-Parameter::Parameter(const QString name, int number, int min, int max)
+Parameter::Parameter(const QString& name, int number, int min, int max)
 {
 
     m_value = number;

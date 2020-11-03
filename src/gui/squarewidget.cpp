@@ -1,13 +1,16 @@
 #include "squarewidget.h"
 
-SquareWidget::SquareWidget(int width, int height, const QString& initialText)
-{
-    m_width = width;
-    m_height = height;
+SquareWidget::SquareWidget(int width, int height, const QString& initialText):
+    m_width(width),
+    m_height(height),
+    m_isClickable(true),
+    m_button(new CellButton(initialText))
 
-    m_button = new CellButton(initialText);
-    connect(m_button, &QPushButton::clicked, this, &SquareWidget::onClicked);
+{
+    connect(m_button, &QPushButton::clicked, this, &SquareWidget::onLeftClicked);
+    connect(m_button, &CellButton::rightClicked, this, &SquareWidget::onRightClicked);
 }
+
 
 SquareWidget::~SquareWidget()
 {
@@ -24,8 +27,27 @@ void SquareWidget::setButton(const QString & newCharacter)
     m_button->setText(newCharacter);
 }
 
-void SquareWidget::onClicked()
+void SquareWidget::onLeftClicked()
 {
-    emit clicked(m_width, m_height);
-    m_button->setDisabled(true);
+    if (m_isClickable)
+    {
+        emit leftClicked(m_width, m_height);
+        m_button->setDisabled(true);
+    }
+}
+
+void SquareWidget::onRightClicked()
+{
+    emit rightClicked(m_width, m_height);
+}
+
+void SquareWidget::setIsClickable(bool isClickable)
+{
+    m_isClickable = isClickable;
+}
+
+void SquareWidget::disable()
+{
+    disconnect(m_button, &QPushButton::clicked, this, &SquareWidget::onLeftClicked);
+    disconnect(m_button, &CellButton::rightClicked, this, &SquareWidget::onRightClicked);
 }

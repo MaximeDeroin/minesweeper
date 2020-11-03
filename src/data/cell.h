@@ -23,6 +23,7 @@ public:
     bool isDiscovered() const;
     void setIsDiscovered(bool isDiscovered);
 
+    bool changeFlagStatus();
     void sendSignal();
 
     QString textToPrint(QString &styleSheet);
