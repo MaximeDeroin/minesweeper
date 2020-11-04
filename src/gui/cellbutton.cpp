@@ -1,7 +1,7 @@
 #include "cellbutton.h"
 
-CellButton::CellButton(const QString& initialText):
-    QPushButton(initialText)
+CellButton::CellButton():
+    QPushButton(QString(" "))
 {
     this->setFixedSize(BUTTON_SIZE,BUTTON_SIZE);
 }
@@ -30,14 +30,14 @@ void CellButton::drawFlag()
     this->setIconSize(QSize(BUTTON_SIZE, BUTTON_SIZE));
 }
 
-void CellButton::mousePressEvent(QMouseEvent *e)
+void CellButton::mousePressEvent(QMouseEvent* event)
 {
-    if(e->button()==Qt::RightButton)
+    if(event->button()==Qt::RightButton)
     {
         emit rightClicked();
     }
     else
     {
-        QPushButton::mousePressEvent(e);
+        QPushButton::mousePressEvent(event);
     }
 }

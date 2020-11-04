@@ -2,13 +2,13 @@
 #include <iostream>
 
 GameWindow::GameWindow(int width, int height, int mineNumber):
+    m_gameWidth(width),
+    m_gameHeight(height),
     m_buttons(QVector<SquareWidget*>()),
     m_game(new Game(width, height, mineNumber))
 {
     setFixedSize(30+30*width,30+30*height);
     this->setWindowIcon(QIcon(":/img/mine.png"));
-
-    initializeAttributes(width, height);
 
     initializeLayout();
 }
@@ -19,6 +19,50 @@ GameWindow::~GameWindow()
     {
         delete s;
     }
+}
+
+SquareWidget* GameWindow::squareWidget(int i, int j)
+{
+    int index = i*m_gameWidth+j;
+    if (index >= 0 && index < m_gameWidth*m_gameHeight)
+    {
+        return m_buttons[index];
+    }
+    else
+    {
+        return nullptr;
+    }
+}
+
+void GameWindow::initializeLayout()
+{
+    m_gameLayout = new QGridLayout();
+
+    for (int i=0; i<m_gameHeight; i++)
+        for (int j=0; j<m_gameWidth; j++)
+        {
+            SquareWidget* button = new SquareWidget(i, j);
+            m_buttons.push_back(button);
+
+            m_gameLayout->addWidget(button->button(), i, j);
+
+            connect(button, &SquareWidget::leftClicked, this, &GameWindow::squareLeftClicked);
+            connect(button, &SquareWidget::rightClicked, this, &GameWindow::squareRightClicked);
+        }
+
+    this->setLayout(m_gameLayout);
+}
+
+void GameWindow::repaintGame()
+{
+    for (int i=0; i<m_gameHeight; i++)
+        for (int j=0; j<m_gameWidth; j++)
+        {
+            QString styleSheet;
+            QString text(m_game->textToPrint(i, j, styleSheet));
+            bool celltoDisable(m_game->cellIsDiscovered(i, j));
+            squareWidget(i,j)->button()->repaintButton(text, styleSheet, celltoDisable);
+        }
 }
 
 void GameWindow::squareLeftClicked(int i, int j)
@@ -62,54 +106,3 @@ void GameWindow::squareRightClicked(int i, int j)
     squareWidget(i,j)->setIsClickable(!cellFlagged);
     repaintGame();
 }
-
-SquareWidget* GameWindow::squareWidget(int i, int j)
-{
-    int index = i*m_gameWidth+j;
-    if (index >= 0 && index < m_gameWidth*m_gameHeight)
-    {
-        return m_buttons[index];
-    }
-    else
-    {
-        return nullptr;
-    }
-}
-
-void GameWindow::initializeAttributes(int width, int height)
-{
-    m_gameWidth = width;
-    m_gameHeight = height;
-}
-
-void GameWindow::initializeLayout()
-{
-    m_gameLayout = new QGridLayout();
-
-    for (int i=0; i<m_gameHeight; i++)
-        for (int j=0; j<m_gameWidth; j++)
-        {
-            SquareWidget* button = new SquareWidget(i, j, " ");
-            m_buttons.push_back(button);
-
-            m_gameLayout->addWidget(button->button(), i, j);
-
-            connect(button, &SquareWidget::leftClicked, this, &GameWindow::squareLeftClicked);
-            connect(button, &SquareWidget::rightClicked, this, &GameWindow::squareRightClicked);
-        }
-
-    this->setLayout(m_gameLayout);
-}
-
-void GameWindow::repaintGame()
-{
-    for (int i=0; i<m_gameHeight; i++)
-        for (int j=0; j<m_gameWidth; j++)
-        {
-            QString styleSheet;
-            QString text(m_game->textToPrint(i, j, styleSheet));
-            bool celltoDisable(m_game->cellIsDiscovered(i, j));
-            squareWidget(i,j)->button()->repaintButton(text, styleSheet, celltoDisable);
-        }
-}
-

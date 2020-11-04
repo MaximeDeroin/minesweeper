@@ -8,27 +8,31 @@
 #include <QVBoxLayout>
 #include <QGridLayout>
 
-#include <iostream>
-
 #include "squarewidget.h"
 
 #include "../data/game.h"
 #include "../data/cell.h"
 
+/**
+ * @brief Manages the game widow
+ */
 class GameWindow : public QWidget
 {
     Q_OBJECT
 public:
     /**
      * @brief GameWindow create a game with the parameters in argument
-     * @param width width of the game grid
-     * @param height height of the game grid
-     * @param mineNumber number of mines in the grid
+     * @param[in] width width of the game grid
+     * @param[in] height height of the game grid
+     * @param[in] mineNumber number of mines in the grid
      * @warning requires that the number of mine is compatible, there must be at least 1 mine and
      * one empty square in the grid (width*height < mineNumber
      */
     explicit GameWindow(int width, int height, int mineNumber);
 
+    /**
+     * @brief Default destructor
+     */
     virtual ~GameWindow();
 
 signals:
@@ -36,9 +40,9 @@ signals:
 public slots:
 
 private:
-    int m_gameWidth;
-    int m_gameHeight;
-    int m_gameMineNumber;
+    int m_gameWidth; //!< Width of the game in number of cells
+    int m_gameHeight; //!< Height of the game in number of cells
+    int m_gameMineNumber; //!< Number of mines in the game
 
     /**
      * @brief stores the game buttons in a 1D vector.
@@ -49,41 +53,43 @@ private:
      */
     QVector<SquareWidget*> m_buttons;
 
-    QGridLayout* m_gameLayout;
+    QGridLayout* m_gameLayout; //!< Layout of the game
 
-    Game* m_game;
+    Game* m_game; //!< Information of the game
 
-    void initializeAttributes(int width, int height);
+    /**
+     * @brief Initizes the window layout
+     */
     void initializeLayout();
 
-    void placeMines(int width, int height);
-
-    void computeAdjacentMineNumbers();
-    int computeAdjacentMines(int i, int j);
-
-    QString getButtonText(int i, int j) const;
-    void setButtonText(int i, int j, int mineNumber);
-    void setButtonText(int i, int j, QString text);
-
-    void setNeighborNumber(int i, int j, int neighborNumber);
-    int getNeighborNumber(int i, int j);
-    void discover(int i, int j);
-
-
-    void paintInitialGame();
+    /**
+     * @brief Updates the game display
+     */
     void repaintGame();
 
-    bool hasMine(int i, int j) const;
-
-    bool isInBoard(int i, int j) const;
-
 private slots:
-    void squareLeftClicked(int width, int height);
-    void squareRightClicked(int width, int height);
+    /**
+     * @brief Manages a left click on a cell
+     * @param[in] i Row number of the cell
+     * @param[in] j Column number of the cell
+     */
+    void squareLeftClicked(int i, int j);
+
+    /**
+     * @brief Manages a right click on a cell
+     * @param[in] i Row number of the cell
+     * @param[in] j Column number of the cell
+     */
+    void squareRightClicked(int i, int j);
 
 private:
+    /**
+     * @brief Getter for the cell widget
+     * @param[in] i Row number of the cell
+     * @param[in] j Column number of the cell
+     * @return Cell widget
+     */
     SquareWidget* squareWidget(int i, int j);
-
 };
 
 #endif // GAMEWINDOW_H

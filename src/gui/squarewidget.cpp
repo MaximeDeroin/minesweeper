@@ -1,10 +1,10 @@
 #include "squarewidget.h"
 
-SquareWidget::SquareWidget(int width, int height, const QString& initialText):
-    m_width(width),
-    m_height(height),
+SquareWidget::SquareWidget(int row, int col):
+    m_row(row),
+    m_col(col),
     m_isClickable(true),
-    m_button(new CellButton(initialText))
+    m_button(new CellButton())
 
 {
     connect(m_button, &QPushButton::clicked, this, &SquareWidget::onLeftClicked);
@@ -22,7 +22,7 @@ CellButton* SquareWidget::button() const
     return this->m_button;
 }
 
-void SquareWidget::setButton(const QString & newCharacter)
+void SquareWidget::setButton(const QString& newCharacter)
 {
     m_button->setText(newCharacter);
 }
@@ -31,14 +31,14 @@ void SquareWidget::onLeftClicked()
 {
     if (m_isClickable)
     {
-        emit leftClicked(m_width, m_height);
+        emit leftClicked(m_row, m_col);
         m_button->setDisabled(true);
     }
 }
 
 void SquareWidget::onRightClicked()
 {
-    emit rightClicked(m_width, m_height);
+    emit rightClicked(m_row, m_col);
 }
 
 void SquareWidget::setIsClickable(bool isClickable)

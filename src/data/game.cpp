@@ -121,7 +121,7 @@ int Game::computeAdjacentMines(int i, int j) {
 
 void Game::setAdjacentMinesNumber(int i, int j, int neighborNumber)
 {
-    m_cellGrid[i*m_width+j]->setNumberOfAdjacentMines(neighborNumber);
+    cell(i,j)->setNumberOfAdjacentMines(neighborNumber);
 }
 
 bool Game::discover(int i, int j)
@@ -182,21 +182,21 @@ bool Game::flag(int i, int j)
 
 QString Game::textToPrint(int i, int j, QString& styleSheet)
 {
-    return m_cellGrid[i*m_width+j]->textToPrint(styleSheet);
+    return cell(i,j)->textToPrint(styleSheet);
 }
 
 bool Game::cellIsDiscovered(int i, int j)
 {
     if (isInBoard(i,j))
     {
-        return m_cellGrid[i*m_width+j]->isDiscovered();
+        return cell(i,j)->isDiscovered();
     }
     return false;
 }
 
 int Game::getNeighborNumber(int i, int j)
 {
-    return m_cellGrid[i*m_width+j]->numberOfAdjacentMines();
+    return cell(i,j)->numberOfAdjacentMines();
 }
 
 bool Game::hasMine(int i, int j) const{

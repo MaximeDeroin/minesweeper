@@ -15,9 +15,9 @@ MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent)
 
 void MenuWindow::startAGame()
 {
-    int width = m_gameWidth->getValue();
-    int height = m_gameHeight->getValue();
-    int mineNumber = m_gameMineNumber->getValue();
+    int width = m_gameWidth->value();
+    int height = m_gameHeight->value();
+    int mineNumber = m_gameMineNumber->value();
 
     if (width*height <= mineNumber) {
         QMessageBox::warning(this, "Incompatible parameters",
@@ -30,9 +30,9 @@ void MenuWindow::startAGame()
 
 void MenuWindow::createParameters()
 {
-    m_gameWidth = new Parameter("Game Width", 10, 5,20);
-    m_gameHeight = new Parameter("Game Height", 10, 5, 20);
-    m_gameMineNumber = new Parameter("Mine Number", 10, 1, 20);
+    m_gameWidth = new Parameter("Game Width", 10, 5,20, this);
+    m_gameHeight = new Parameter("Game Height", 10, 5, 20, this);
+    m_gameMineNumber = new Parameter("Mine Number", 10, 1, 20, this);
 }
 
 void MenuWindow::setMenu()
@@ -52,9 +52,9 @@ void MenuWindow::createMenuLayout()
 {
     m_mainLayout = new QVBoxLayout;
     m_mainLayout->addWidget(m_playButton);
-    m_mainLayout->addLayout(m_gameWidth->getParameterLayout());
-    m_mainLayout->addLayout(m_gameHeight->getParameterLayout());
-    m_mainLayout->addLayout(m_gameMineNumber->getParameterLayout());
+    m_mainLayout->addLayout(m_gameWidth->parameterLayout());
+    m_mainLayout->addLayout(m_gameHeight->parameterLayout());
+    m_mainLayout->addLayout(m_gameMineNumber->parameterLayout());
     m_mainLayout->addWidget(m_quitButton);
 
     this->setLayout(m_mainLayout);
@@ -64,5 +64,5 @@ void MenuWindow::createMenuLayout()
 void MenuWindow::connectMenuButtons()
 {
     connect(m_playButton, &QPushButton::clicked, this, &MenuWindow::startAGame);
-    connect(m_quitButton,SIGNAL(clicked()), qApp, SLOT(quit()));
+    connect(m_quitButton, &QPushButton::clicked, qApp, &QApplication::quit);
 }
