@@ -8,14 +8,14 @@
 #include <QHBoxLayout>
 #include <QString>
 
-/**
+/*!
  * @brief Manages a parameter in the gui
  */
 class Parameter : public QWidget
 {
     Q_OBJECT
 public:
-    /**
+    /*!
      * @brief Class constuctor. Initializes members and widgets
      * @param[in] name Name of the parameter
      * @param[in] value Value of the parameter
@@ -25,25 +25,25 @@ public:
      */
     explicit Parameter(const QString &name, int value, int min, int max, QWidget *parent = nullptr);
 
-    /**
+    /*!
      * @brief Default destructor
      */
     virtual ~Parameter();
 
-    /**
+    /*!
      * @brief Provides layout for the parameter widgets
      * @return Layout for the parameter widgets
      */
     QHBoxLayout* parameterLayout();
 
-    /**
+    /*!
      * @brief Getter of parameter value
      * @return Parameter value
      */
     int value();
 
 public slots:
-    /**
+    /*!
      * @brief Setter of parameter value, also updates widgets
      * @param[in] value New value
      */

@@ -13,14 +13,14 @@
 #include "../data/game.h"
 #include "../data/cell.h"
 
-/**
+/*!
  * @brief Manages the game widow
  */
 class GameWindow : public QWidget
 {
     Q_OBJECT
 public:
-    /**
+    /*!
      * @brief GameWindow create a game with the parameters in argument
      * @param[in] width width of the game grid
      * @param[in] height height of the game grid
@@ -30,7 +30,7 @@ public:
      */
     explicit GameWindow(int width, int height, int mineNumber);
 
-    /**
+    /*!
      * @brief Default destructor
      */
     virtual ~GameWindow();
@@ -44,7 +44,7 @@ private:
     int m_gameHeight; //!< Height of the game in number of cells
     int m_gameMineNumber; //!< Number of mines in the game
 
-    /**
+    /*!
      * @brief stores the game buttons in a 1D vector.
      * In the buttons array, the element in position (x,y) will be in position
      * x*m_gameWidth+y in the vector
@@ -57,25 +57,25 @@ private:
 
     Game* m_game; //!< Information of the game
 
-    /**
+    /*!
      * @brief Initizes the window layout
      */
     void initializeLayout();
 
-    /**
+    /*!
      * @brief Updates the game display
      */
     void repaintGame();
 
 private slots:
-    /**
+    /*!
      * @brief Manages a left click on a cell
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
      */
     void squareLeftClicked(int i, int j);
 
-    /**
+    /*!
      * @brief Manages a right click on a cell
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -83,7 +83,7 @@ private slots:
     void squareRightClicked(int i, int j);
 
 private:
-    /**
+    /*!
      * @brief Getter for the cell widget
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell

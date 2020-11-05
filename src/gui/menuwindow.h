@@ -9,21 +9,21 @@
 #include "parameter.h"
 #include "gamewindow.h"
 
-/**
+/*!
  * @brief Manages the menu gui
  */
 class MenuWindow : public QWidget
 {
     Q_OBJECT
 public:
-    /**
+    /*!
      * @brief Class constructor
      * @param[in] parent Parnet widget
      */
     explicit MenuWindow(QWidget *parent = nullptr);
 
 public slots:
-    /**
+    /*!
      * @brief Starts a game
      */
     void startAGame();
@@ -38,27 +38,27 @@ private:
 
     QVBoxLayout* m_mainLayout; //!< Layout of the window
 
-    /**
+    /*!
      * @brief Create the Parameter objects
      */
     void createParameters();
 
-    /**
+    /*!
      * @brief Initializes the menu display
      */
     void setMenu();
 
-    /**
+    /*!
      * @brief Initializes the menu buttons
      */
     void createMenuButtons();
 
-    /**
+    /*!
      * @brief Initializes the menu layout
      */
     void createMenuLayout();
 
-    /**
+    /*!
      * @brief Connect the menu button signals
      */
     void connectMenuButtons();

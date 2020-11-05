@@ -4,13 +4,13 @@
 #include "cell.h"
 #include <QVector>
 
-/**
+/*!
  * @brief Stores info of a game
  */
 class Game
 {
 public:
-    /**
+    /*!
      * @brief Class constructor
      * Initializes members
      * @param[in] width Width of the game in cells
@@ -19,12 +19,12 @@ public:
      */
     explicit Game(int width, int height, int mineNumber);
 
-    /**
+    /*!
      * @brief Default destructor
      */
     virtual ~Game();
 
-    /**
+    /*!
      * @brief Describes the current game state
      */
     enum class GameState
@@ -43,14 +43,14 @@ public:
 
     GameState gameState() const; //!< Getter of m_gameState
 
-    /**
+    /*!
      * @brief Initializes the game
      * @param[in] i Row number of the first played cell
      * @param[in] j Column number of the first played cell
      */
     void startGame(int i, int j);
 
-    /**
+    /*!
      * @brief Discovers a cell
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -58,7 +58,7 @@ public:
      */
     bool discover(int i, int j);
 
-    /**
+    /*!
      * @brief Flag or unflag a cell
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -66,7 +66,7 @@ public:
      */
     bool flag(int i, int j);
 
-    /**
+    /*!
      * @brief Provides text to display on the cell.
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -75,7 +75,7 @@ public:
      */
     QString textToPrint(int i, int j, QString &styleSheet);
 
-    /**
+    /*!
      * @brief Indicates if a cell is discovered
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -96,7 +96,7 @@ private:
 
     QVector<Cell*> m_cellGrid; //!< Grid of cells representing the minefield
 
-    /**
+    /*!
      * @brief Places mines in the grid
      * @param[in] i Row number of the first played cell
      * @param[in] j Column number of the first played cell
@@ -104,12 +104,12 @@ private:
      */
     void placeMines(int i, int j);
 
-    /**
+    /*!
      * @brief Computes adjacent mine numbers for all cells in the field
      */
     void computeAdjacentMineNumbers();
 
-    /**
+    /*!
      * @brief Computes adjacent mine numbers for a specific cell
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -117,7 +117,7 @@ private:
      */
     int computeAdjacentMines(int i, int j);
 
-    /**
+    /*!
      * @brief Set number of adjacent cells with a mine in the Cell object
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -125,7 +125,7 @@ private:
      */
     void setAdjacentMinesNumber(int i, int j, int neighborNumber);
 
-    /**
+    /*!
      * @brief Indicates if a cell contains a mine
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -133,7 +133,7 @@ private:
      */
     bool hasMine(int i, int j) const;
 
-    /**
+    /*!
      * @brief Indicates if the coordinates correspond to a cell in the field
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -141,7 +141,7 @@ private:
      */
     bool isInBoard(int i, int j) const;
 
-    /**
+    /*!
      * @brief Getter of the number of adjacent cells with a mine for a specific cell
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -149,7 +149,7 @@ private:
      */
     int getNeighborNumber(int i, int j);
 
-    /**
+    /*!
      * @brief Getter of a cell
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell

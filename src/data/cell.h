@@ -4,13 +4,13 @@
 #include <QString>
 #include <QColor>
 
-/**
+/*!
  * @brief Stores info of a cell
  */
 class Cell
 {
 public:
-    /**
+    /*!
      * @brief Default constructor
      * Initializes members
      */
@@ -27,13 +27,13 @@ public:
     bool isDiscovered() const; //!< Getter of m_isDiscovered
     void setIsDiscovered(bool isDiscovered); //!< Setter of m_isDiscovered
 
-    /**
+    /*!
      * @brief Changes value of m_isFlagged (switch between true and false)
      * @return New value of m_isFlagged
      */
     bool changeFlagStatus();
 
-    /**
+    /*!
      * @brief Provides text to display on the cell.
      * Returns m_numberOfAdjacentMines if it is from 1 to 8
      * Return space id m_numberOfAdjacentMines = 0
@@ -50,7 +50,7 @@ private:
     bool m_isFlagged; //!< Indicates if the cell is currently flagged
     bool m_isDiscovered; //!< Indicates if the cell has been discovered
 
-    /**
+    /*!
      * @brief Provides color of the text to display on the cell
      * @todo Check if this process should be done in the gui classes
      * @return Color of the text to display on the cell
