@@ -32,7 +32,7 @@ void MenuWindow::createParameters()
 {
     m_gameWidth = new Parameter("Game Width", 10, 5,20, this);
     m_gameHeight = new Parameter("Game Height", 10, 5, 20, this);
-    m_gameMineNumber = new Parameter("Mine Number", 10, 1, 20, this);
+    m_gameMineNumber = new Parameter("Mine Number", 10, 1, 100, this);
 }
 
 void MenuWindow::setMenu()
