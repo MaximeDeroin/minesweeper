@@ -83,6 +83,11 @@ public:
      */
     bool cellIsDiscovered(int i, int j);
 
+    /**
+     * @brief Displays cells with a mine
+     */
+    void showMinePositions();
+
 private:
     bool m_started; //!< Indicates if the game is started
     bool m_finished; //!< Indicates if the game is finished

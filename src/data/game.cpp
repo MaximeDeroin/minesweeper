@@ -87,10 +87,11 @@ void Game::placeMines(int i, int j)
 
 void Game::computeAdjacentMineNumbers() {
     for (int i=0; i<m_height; i++)
-        for (int j=0; j<m_width; j++) {
-            if (!(hasMine(i,j))) {
+        for (int j=0; j<m_width; j++)
+        {
+            if (!(hasMine(i,j)))
+            {
                 int adjacentMines = computeAdjacentMines(i,j);
-
                 setAdjacentMinesNumber(i,j,adjacentMines);
             }
         }
@@ -143,6 +144,7 @@ bool Game::discover(int i, int j)
     if (clickedCell->hasMine())
     {
         m_gameState = Game::GameState::LOST;
+        showMinePositions();
         return true;
     }
     else if (m_undiscoveredSquares == m_mineNumber)
@@ -192,6 +194,21 @@ bool Game::cellIsDiscovered(int i, int j)
         return cell(i,j)->isDiscovered();
     }
     return false;
+}
+
+void Game::showMinePositions()
+{
+    for (Cell* cell: m_cellGrid)
+    {
+        if (cell->hasMine())
+        {
+            if (cell->isFlagged())
+            {
+                cell->changeFlagStatus();
+            }
+            cell->setIsDiscovered(true);
+        }
+    }
 }
 
 int Game::getNeighborNumber(int i, int j)
