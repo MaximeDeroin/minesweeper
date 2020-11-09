@@ -35,7 +35,14 @@ public:
      */
     virtual ~GameWindow();
 
+    QPushButton *restartButton() const; //!< Getter of m_restartButton
+
+    QPushButton *returnButton() const; //!< Getter of m_returnButton
+
 signals:
+    void returnToMenu();
+
+    void restartGame(int width, int height, int mineNumber);
 
 public slots:
 
@@ -43,6 +50,9 @@ private:
     int m_gameWidth; //!< Width of the game in number of cells
     int m_gameHeight; //!< Height of the game in number of cells
     int m_gameMineNumber; //!< Number of mines in the game
+
+    QPushButton* m_restartButton; //!< Button to start a new game
+    QPushButton* m_returnButton; //!< Button to come back to the menu
 
     /*!
      * @brief stores the game buttons in a 1D vector.

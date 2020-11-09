@@ -18,15 +18,29 @@ class MenuWindow : public QWidget
 public:
     /*!
      * @brief Class constructor
-     * @param[in] parent Parnet widget
+     * @param[in] parent Parent widget
      */
     explicit MenuWindow(QWidget *parent = nullptr);
+
+    /*!
+     * @brief Default destructor
+     */
+    virtual ~MenuWindow();
 
 public slots:
     /*!
      * @brief Starts a game
      */
     void startAGame();
+
+signals:
+    /*!
+     * \brief Requests a new game
+     * @param[in] width width of the game grid
+     * @param[in] height height of the game grid
+     * @param[in] mineNumber number of mines in the grid
+     */
+    void newGame(int width, int height, int mineNumber);
 
 private:
     Parameter* m_gameWidth; //!< Parameter managing the width of the game

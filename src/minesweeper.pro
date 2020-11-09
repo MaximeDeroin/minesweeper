@@ -8,7 +8,8 @@ SOURCES += \
     gui/parameter.cpp \
     main.cpp \
     gui/squarewidget.cpp \
-    gui/cellbutton.cpp
+    gui/cellbutton.cpp \
+    gui/guimanager.cpp
 
 HEADERS += \
     data/cell.h \
@@ -17,7 +18,8 @@ HEADERS += \
     gui/menuwindow.h \
     gui/parameter.h \
     gui/squarewidget.h \
-    gui/cellbutton.h
+    gui/cellbutton.h \
+    gui/guimanager.h
 
 RESOURCES += \
     ../resources/images.qrc

@@ -1,16 +1,18 @@
 #include "menuwindow.h"
 #include "parameter.h"
 
-
-
 MenuWindow::MenuWindow(QWidget *parent) : QWidget(parent)
 {
-    setFixedSize(400,400);
     setWindowTitle("Minesweeper");
     this->setWindowIcon(QIcon(":/img/mine.png"));
 
     this->createParameters();
     this->setMenu();
+}
+
+MenuWindow::~MenuWindow()
+{
+
 }
 
 void MenuWindow::startAGame()
@@ -19,12 +21,16 @@ void MenuWindow::startAGame()
     int height = m_gameHeight->value();
     int mineNumber = m_gameMineNumber->value();
 
-    if (width*height <= mineNumber) {
+    if (width*height <= mineNumber)
+    {
         QMessageBox::warning(this, "Incompatible parameters",
             "The number of mine is too big, please change the parameters");
-    } else {
-        GameWindow *gameWindow = new GameWindow(width, height, mineNumber);
-        gameWindow->show();
+    }
+    else
+    {
+        emit newGame(width, height, mineNumber);
+//        GameWindow *gameWindow = new GameWindow(width, height, mineNumber);
+//        gameWindow->show();
     }
 }
 
@@ -44,13 +50,13 @@ void MenuWindow::setMenu()
 
 void MenuWindow::createMenuButtons()
 {
-    m_playButton = new QPushButton("Play");
-    m_quitButton = new QPushButton("Quit");
+    m_playButton = new QPushButton("Play", this);
+    m_quitButton = new QPushButton("Quit", this);
 }
 
 void MenuWindow::createMenuLayout()
 {
-    m_mainLayout = new QVBoxLayout;
+    m_mainLayout = new QVBoxLayout(this);
     m_mainLayout->addWidget(m_playButton);
     m_mainLayout->addLayout(m_gameWidth->parameterLayout());
     m_mainLayout->addLayout(m_gameHeight->parameterLayout());

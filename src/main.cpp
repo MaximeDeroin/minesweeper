@@ -1,13 +1,11 @@
 #include <QApplication>
-#include "gui/menuwindow.h"
+#include "gui/guimanager.h"
 
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-
-    MenuWindow window;
-    window.show();
+    GuiManager guiManager;
 
     return app.exec();
 }

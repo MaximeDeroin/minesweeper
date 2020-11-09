@@ -1,13 +1,15 @@
 #include "gamewindow.h"
 #include <iostream>
+#include <QFrame>
 
 GameWindow::GameWindow(int width, int height, int mineNumber):
     m_gameWidth(width),
     m_gameHeight(height),
+    m_restartButton(new QPushButton("Start new game")),
+    m_returnButton(new QPushButton("Return to menu")),
     m_buttons(QVector<SquareWidget*>()),
     m_game(new Game(width, height, mineNumber))
 {
-    setFixedSize(30+30*width,30+30*height);
     this->setWindowIcon(QIcon(":/img/mine.png"));
 
     initializeLayout();
@@ -19,6 +21,16 @@ GameWindow::~GameWindow()
     {
         delete s;
     }
+}
+
+QPushButton *GameWindow::restartButton() const
+{
+    return m_restartButton;
+}
+
+QPushButton *GameWindow::returnButton() const
+{
+    return m_returnButton;
 }
 
 SquareWidget* GameWindow::squareWidget(int i, int j)
@@ -36,7 +48,8 @@ SquareWidget* GameWindow::squareWidget(int i, int j)
 
 void GameWindow::initializeLayout()
 {
-    m_gameLayout = new QGridLayout();
+    QVBoxLayout* mainLayout(new QVBoxLayout(this));
+    m_gameLayout = new QGridLayout(this);
 
     for (int i=0; i<m_gameHeight; i++)
         for (int j=0; j<m_gameWidth; j++)
@@ -49,6 +62,14 @@ void GameWindow::initializeLayout()
             connect(button, &SquareWidget::leftClicked, this, &GameWindow::squareLeftClicked);
             connect(button, &SquareWidget::rightClicked, this, &GameWindow::squareRightClicked);
         }
+
+    mainLayout->addLayout(m_gameLayout);
+    QFrame *horizontalLine = new QFrame(this);
+    horizontalLine->setFrameShape(QFrame::HLine);
+    horizontalLine->setFixedHeight(5);
+    mainLayout->addWidget(horizontalLine);
+    mainLayout->addWidget(m_restartButton);
+    mainLayout->addWidget(m_returnButton);
 
     this->setLayout(m_gameLayout);
 }
