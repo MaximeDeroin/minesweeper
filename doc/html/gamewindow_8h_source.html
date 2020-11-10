@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>minesweeper: src/gui/gamewindow.h Source File</title>
+<title>minesweeper: D:/Maxime/Documents/code/github/minesweeper/src/gui/gamewindow.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">minesweeper
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -93,40 +93,54 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_game_window.html#a55b071c0390e45c064a160c1e6baaa08">~GameWindow</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;signals:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QPushButton *<a class="code" href="class_game_window.html#a4597c450b4c1e59b09d74f3a66255310">restartButton</a>() <span class="keyword">const</span>; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    QPushButton *<a class="code" href="class_game_window.html#a8da6664874c56926c80ab5a69f71cb95">returnButton</a>() <span class="keyword">const</span>; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> m_gameWidth; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> m_gameHeight; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> m_gameMineNumber; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QVector&lt;SquareWidget*&gt; m_buttons;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    QGridLayout* m_gameLayout; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_game.html">Game</a>* m_game; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;signals:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_game_window.html#ac1975bc820e6876eb30bfbbbdc35efa2">   46</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_window.html#ac1975bc820e6876eb30bfbbbdc35efa2">returnToMenu</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_game_window.html#a0f741ae1b9d8d0fa89b8115a0744f513">   51</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_window.html#a0f741ae1b9d8d0fa89b8115a0744f513">restartGame</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> mineNumber);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> m_gameWidth; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> m_gameHeight; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> m_gameMineNumber; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> initializeLayout();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> repaintGame();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> squareLeftClicked(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> squareRightClicked(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="class_square_widget.html">SquareWidget</a>* squareWidget(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif // GAMEWINDOW_H</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    QPushButton* m_restartButton; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    QPushButton* m_returnButton; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    QVector&lt;SquareWidget*&gt; m_buttons;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    QGridLayout* m_gameLayout; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_game.html">Game</a>* m_game; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> initializeLayout();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> repaintGame();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> squareLeftClicked(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> squareRightClicked(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="class_square_widget.html">SquareWidget</a>* squareWidget(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif // GAMEWINDOW_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_game_window_html_a8053a205ca9f557a03918c6ba87a3a9e"><div class="ttname"><a href="class_game_window.html#a8053a205ca9f557a03918c6ba87a3a9e">GameWindow::GameWindow</a></div><div class="ttdeci">GameWindow(int width, int height, int mineNumber)</div><div class="ttdoc">GameWindow create a game with the parameters in argument.</div><div class="ttdef"><b>Definition:</b> gamewindow.cpp:4</div></div>
-<div class="ttc" id="aclass_game_window_html_a55b071c0390e45c064a160c1e6baaa08"><div class="ttname"><a href="class_game_window.html#a55b071c0390e45c064a160c1e6baaa08">GameWindow::~GameWindow</a></div><div class="ttdeci">virtual ~GameWindow()</div><div class="ttdoc">Default destructor.</div><div class="ttdef"><b>Definition:</b> gamewindow.cpp:16</div></div>
+<div class="ttc" id="aclass_game_window_html_a8053a205ca9f557a03918c6ba87a3a9e"><div class="ttname"><a href="class_game_window.html#a8053a205ca9f557a03918c6ba87a3a9e">GameWindow::GameWindow</a></div><div class="ttdeci">GameWindow(int width, int height, int mineNumber)</div><div class="ttdoc">GameWindow create a game with the parameters in argument.</div><div class="ttdef"><b>Definition:</b> gamewindow.cpp:5</div></div>
+<div class="ttc" id="aclass_game_window_html_a55b071c0390e45c064a160c1e6baaa08"><div class="ttname"><a href="class_game_window.html#a55b071c0390e45c064a160c1e6baaa08">GameWindow::~GameWindow</a></div><div class="ttdeci">virtual ~GameWindow()</div><div class="ttdoc">Default destructor.</div><div class="ttdef"><b>Definition:</b> gamewindow.cpp:18</div></div>
+<div class="ttc" id="aclass_game_window_html_a8da6664874c56926c80ab5a69f71cb95"><div class="ttname"><a href="class_game_window.html#a8da6664874c56926c80ab5a69f71cb95">GameWindow::returnButton</a></div><div class="ttdeci">QPushButton * returnButton() const</div><div class="ttdoc">Getter of m_returnButton.</div><div class="ttdef"><b>Definition:</b> gamewindow.cpp:31</div></div>
+<div class="ttc" id="aclass_game_window_html_a0f741ae1b9d8d0fa89b8115a0744f513"><div class="ttname"><a href="class_game_window.html#a0f741ae1b9d8d0fa89b8115a0744f513">GameWindow::restartGame</a></div><div class="ttdeci">void restartGame(int width, int height, int mineNumber)</div><div class="ttdoc">Indicates that the &quot;Start new game&quot; button is pressed.</div></div>
 <div class="ttc" id="asquarewidget_8h_html"><div class="ttname"><a href="squarewidget_8h.html">squarewidget.h</a></div></div>
-<div class="ttc" id="aclass_game_window_html"><div class="ttname"><a href="class_game_window.html">GameWindow</a></div><div class="ttdoc">Manages the game widow.</div><div class="ttdef"><b>Definition:</b> gamewindow.h:20</div></div>
+<div class="ttc" id="aclass_game_window_html"><div class="ttname"><a href="class_game_window.html">GameWindow</a></div><div class="ttdoc">Manages the game window.</div><div class="ttdef"><b>Definition:</b> gamewindow.h:20</div></div>
+<div class="ttc" id="aclass_game_window_html_ac1975bc820e6876eb30bfbbbdc35efa2"><div class="ttname"><a href="class_game_window.html#ac1975bc820e6876eb30bfbbbdc35efa2">GameWindow::returnToMenu</a></div><div class="ttdeci">void returnToMenu()</div><div class="ttdoc">Indicates that the &quot;Return to menu&quot; button is pressed.</div></div>
+<div class="ttc" id="aclass_game_window_html_a4597c450b4c1e59b09d74f3a66255310"><div class="ttname"><a href="class_game_window.html#a4597c450b4c1e59b09d74f3a66255310">GameWindow::restartButton</a></div><div class="ttdeci">QPushButton * restartButton() const</div><div class="ttdoc">Getter of m_restartButton.</div><div class="ttdef"><b>Definition:</b> gamewindow.cpp:26</div></div>
 <div class="ttc" id="aclass_square_widget_html"><div class="ttname"><a href="class_square_widget.html">SquareWidget</a></div><div class="ttdoc">Button that displays the state of a cell.</div><div class="ttdef"><b>Definition:</b> squarewidget.h:10</div></div>
 <div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">Stores info of a game.</div><div class="ttdef"><b>Definition:</b> game.h:11</div></div>
 <!-- start footer part -->

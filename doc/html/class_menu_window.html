@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">minesweeper
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_menu_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -88,11 +89,20 @@ Public Slots</h2></td></tr>
 <tr class="memdesc:a5e0b0b8784c80569db08ee93d88412f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a game.  <a href="class_menu_window.html#a5e0b0b8784c80569db08ee93d88412f9">More...</a><br /></td></tr>
 <tr class="separator:a5e0b0b8784c80569db08ee93d88412f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a71034c3ed07effc79719e5e98aeafdf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_window.html#a71034c3ed07effc79719e5e98aeafdf2">newGame</a> (int width, int height, int mineNumber)</td></tr>
+<tr class="memdesc:a71034c3ed07effc79719e5e98aeafdf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests a new game.  <a href="class_menu_window.html#a71034c3ed07effc79719e5e98aeafdf2">More...</a><br /></td></tr>
+<tr class="separator:a71034c3ed07effc79719e5e98aeafdf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b0827e31f1373dde6f48a944ac32f3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_window.html#a8b0827e31f1373dde6f48a944ac32f3e">MenuWindow</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:a8b0827e31f1373dde6f48a944ac32f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor.  <a href="class_menu_window.html#a8b0827e31f1373dde6f48a944ac32f3e">More...</a><br /></td></tr>
 <tr class="separator:a8b0827e31f1373dde6f48a944ac32f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0cdde7f18e38d2ab0c2fab21d37970"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_window.html#a4d0cdde7f18e38d2ab0c2fab21d37970">~MenuWindow</a> ()</td></tr>
+<tr class="memdesc:a4d0cdde7f18e38d2ab0c2fab21d37970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="class_menu_window.html#a4d0cdde7f18e38d2ab0c2fab21d37970">More...</a><br /></td></tr>
+<tr class="separator:a4d0cdde7f18e38d2ab0c2fab21d37970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the menu gui. </p>
@@ -124,14 +134,93 @@ Public Member Functions</h2></td></tr>
 <p>Class constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>Parnet widget </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>Parent widget </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<a id="a4d0cdde7f18e38d2ab0c2fab21d37970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0cdde7f18e38d2ab0c2fab21d37970">&#9670;&nbsp;</a></span>~MenuWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MenuWindow::~MenuWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default destructor. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a71034c3ed07effc79719e5e98aeafdf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71034c3ed07effc79719e5e98aeafdf2">&#9670;&nbsp;</a></span>newGame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuWindow::newGame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mineNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Requests a new game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>width of the game grid </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>height of the game grid </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mineNumber</td><td>number of mines in the grid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5e0b0b8784c80569db08ee93d88412f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e0b0b8784c80569db08ee93d88412f9">&#9670;&nbsp;</a></span>startAGame</h2>
 
@@ -160,8 +249,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/gui/<a class="el" href="menuwindow_8h_source.html">menuwindow.h</a></li>
-<li>src/gui/<a class="el" href="menuwindow_8cpp.html">menuwindow.cpp</a></li>
+<li>D:/Maxime/Documents/code/github/minesweeper/src/gui/<a class="el" href="menuwindow_8h_source.html">menuwindow.h</a></li>
+<li>D:/Maxime/Documents/code/github/minesweeper/src/gui/<a class="el" href="menuwindow_8cpp.html">menuwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

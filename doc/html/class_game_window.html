@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">minesweeper
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -63,6 +63,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_game_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -70,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Manages the game widow.  
+<p>Manages the game window.  
  <a href="class_game_window.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="gamewindow_8h_source.html">gamewindow.h</a>&gt;</code></p>
@@ -81,17 +82,32 @@ Inheritance diagram for GameWindow:</div>
   <img src="class_game_window.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:ac1975bc820e6876eb30bfbbbdc35efa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_window.html#ac1975bc820e6876eb30bfbbbdc35efa2">returnToMenu</a> ()</td></tr>
+<tr class="memdesc:ac1975bc820e6876eb30bfbbbdc35efa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the "Return to menu" button is pressed.  <a href="class_game_window.html#ac1975bc820e6876eb30bfbbbdc35efa2">More...</a><br /></td></tr>
+<tr class="separator:ac1975bc820e6876eb30bfbbbdc35efa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f741ae1b9d8d0fa89b8115a0744f513"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_window.html#a0f741ae1b9d8d0fa89b8115a0744f513">restartGame</a> (int width, int height, int mineNumber)</td></tr>
+<tr class="memdesc:a0f741ae1b9d8d0fa89b8115a0744f513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the "Start new game" button is pressed.  <a href="class_game_window.html#a0f741ae1b9d8d0fa89b8115a0744f513">More...</a><br /></td></tr>
+<tr class="separator:a0f741ae1b9d8d0fa89b8115a0744f513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8053a205ca9f557a03918c6ba87a3a9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_window.html#a8053a205ca9f557a03918c6ba87a3a9e">GameWindow</a> (int width, int height, int mineNumber)</td></tr>
-<tr class="memdesc:a8053a205ca9f557a03918c6ba87a3a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_window.html" title="Manages the game widow.">GameWindow</a> create a game with the parameters in argument.  <a href="class_game_window.html#a8053a205ca9f557a03918c6ba87a3a9e">More...</a><br /></td></tr>
+<tr class="memdesc:a8053a205ca9f557a03918c6ba87a3a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_window.html" title="Manages the game window.">GameWindow</a> create a game with the parameters in argument.  <a href="class_game_window.html#a8053a205ca9f557a03918c6ba87a3a9e">More...</a><br /></td></tr>
 <tr class="separator:a8053a205ca9f557a03918c6ba87a3a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55b071c0390e45c064a160c1e6baaa08"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_window.html#a55b071c0390e45c064a160c1e6baaa08">~GameWindow</a> ()</td></tr>
 <tr class="memdesc:a55b071c0390e45c064a160c1e6baaa08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="class_game_window.html#a55b071c0390e45c064a160c1e6baaa08">More...</a><br /></td></tr>
 <tr class="separator:a55b071c0390e45c064a160c1e6baaa08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4597c450b4c1e59b09d74f3a66255310"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_window.html#a4597c450b4c1e59b09d74f3a66255310">restartButton</a> () const</td></tr>
+<tr class="memdesc:a4597c450b4c1e59b09d74f3a66255310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of m_restartButton.  <a href="class_game_window.html#a4597c450b4c1e59b09d74f3a66255310">More...</a><br /></td></tr>
+<tr class="separator:a4597c450b4c1e59b09d74f3a66255310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da6664874c56926c80ab5a69f71cb95"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_window.html#a8da6664874c56926c80ab5a69f71cb95">returnButton</a> () const</td></tr>
+<tr class="memdesc:a8da6664874c56926c80ab5a69f71cb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of m_returnButton.  <a href="class_game_window.html#a8da6664874c56926c80ab5a69f71cb95">More...</a><br /></td></tr>
+<tr class="separator:a8da6664874c56926c80ab5a69f71cb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manages the game widow. </p>
+<div class="textblock"><p>Manages the game window. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8053a205ca9f557a03918c6ba87a3a9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8053a205ca9f557a03918c6ba87a3a9e">&#9670;&nbsp;</a></span>GameWindow()</h2>
@@ -133,7 +149,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_game_window.html" title="Manages the game widow.">GameWindow</a> create a game with the parameters in argument. </p>
+<p><a class="el" href="class_game_window.html" title="Manages the game window.">GameWindow</a> create a game with the parameters in argument. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>width of the game grid </td></tr>
@@ -173,9 +189,119 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4597c450b4c1e59b09d74f3a66255310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4597c450b4c1e59b09d74f3a66255310">&#9670;&nbsp;</a></span>restartButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * GameWindow::restartButton </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter of m_restartButton. </p>
+
+</div>
+</div>
+<a id="a0f741ae1b9d8d0fa89b8115a0744f513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f741ae1b9d8d0fa89b8115a0744f513">&#9670;&nbsp;</a></span>restartGame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWindow::restartGame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mineNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates that the "Start new game" button is pressed. </p>
+
+</div>
+</div>
+<a id="a8da6664874c56926c80ab5a69f71cb95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8da6664874c56926c80ab5a69f71cb95">&#9670;&nbsp;</a></span>returnButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * GameWindow::returnButton </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter of m_returnButton. </p>
+
+</div>
+</div>
+<a id="ac1975bc820e6876eb30bfbbbdc35efa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1975bc820e6876eb30bfbbbdc35efa2">&#9670;&nbsp;</a></span>returnToMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWindow::returnToMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates that the "Return to menu" button is pressed. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/gui/<a class="el" href="gamewindow_8h_source.html">gamewindow.h</a></li>
-<li>src/gui/<a class="el" href="gamewindow_8cpp.html">gamewindow.cpp</a></li>
+<li>D:/Maxime/Documents/code/github/minesweeper/src/gui/<a class="el" href="gamewindow_8h_source.html">gamewindow.h</a></li>
+<li>D:/Maxime/Documents/code/github/minesweeper/src/gui/<a class="el" href="gamewindow_8cpp.html">gamewindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

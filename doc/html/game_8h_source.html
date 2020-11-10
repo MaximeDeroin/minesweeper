@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>minesweeper: src/data/game.h Source File</title>
+<title>minesweeper: D:/Maxime/Documents/code/github/minesweeper/src/data/game.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">minesweeper
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -109,53 +109,56 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_game.html#a16974a676f5efb14a3ed8df863df433f">cellIsDiscovered</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> m_started; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> m_finished; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> m_width; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> m_height; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> m_mineNumber; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> m_undiscoveredSquares; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="class_game.html#a7f57a7a8408e554d0a72882c287e1d04">GameState</a> m_gameState; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    QVector&lt;Cell*&gt; m_cellGrid; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a81de1ffdc3ab145f124bb0be896ee9fe">showMinePositions</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> m_started; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> m_finished; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">int</span> m_width; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">int</span> m_height; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">int</span> m_mineNumber; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> placeMines(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> computeAdjacentMineNumbers();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">int</span> m_undiscoveredSquares; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="class_game.html#a7f57a7a8408e554d0a72882c287e1d04">GameState</a> m_gameState; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    QVector&lt;Cell*&gt; m_cellGrid; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> placeMines(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">int</span> computeAdjacentMines(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> setAdjacentMinesNumber(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> neighborNumber);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">bool</span> hasMine(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">bool</span> isInBoard(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">int</span> getNeighborNumber(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="class_cell.html">Cell</a>* cell(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;};</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif // GAME_H</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> computeAdjacentMineNumbers();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">int</span> computeAdjacentMines(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> setAdjacentMinesNumber(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> neighborNumber);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">bool</span> hasMine(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">bool</span> isInBoard(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">int</span> getNeighborNumber(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="class_cell.html">Cell</a>* cell(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;};</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif // GAME_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_game_html_afd35876758450ade8afdf700d5b59dcf"><div class="ttname"><a href="class_game.html#afd35876758450ade8afdf700d5b59dcf">Game::startGame</a></div><div class="ttdeci">void startGame(int i, int j)</div><div class="ttdoc">Initializes the game.</div><div class="ttdef"><b>Definition:</b> game.cpp:43</div></div>
+<div class="ttc" id="aclass_game_html_a81de1ffdc3ab145f124bb0be896ee9fe"><div class="ttname"><a href="class_game.html#a81de1ffdc3ab145f124bb0be896ee9fe">Game::showMinePositions</a></div><div class="ttdeci">void showMinePositions()</div><div class="ttdoc">Displays cells with a mine.</div><div class="ttdef"><b>Definition:</b> game.cpp:199</div></div>
 <div class="ttc" id="aclass_game_html_a167c7f01b0b9eeb0abc515ea17379eb9"><div class="ttname"><a href="class_game.html#a167c7f01b0b9eeb0abc515ea17379eb9">Game::finished</a></div><div class="ttdeci">bool finished() const</div><div class="ttdoc">Getter of m_finished.</div><div class="ttdef"><b>Definition:</b> game.cpp:38</div></div>
 <div class="ttc" id="aclass_game_html_a7f57a7a8408e554d0a72882c287e1d04"><div class="ttname"><a href="class_game.html#a7f57a7a8408e554d0a72882c287e1d04">Game::GameState</a></div><div class="ttdeci">GameState</div><div class="ttdoc">Describes the current game state.</div><div class="ttdef"><b>Definition:</b> game.h:31</div></div>
 <div class="ttc" id="aclass_game_html_a1da8b76e1d3e374b665456595c6977ff"><div class="ttname"><a href="class_game.html#a1da8b76e1d3e374b665456595c6977ff">Game::gameState</a></div><div class="ttdeci">GameState gameState() const</div><div class="ttdoc">Getter of m_gameState.</div><div class="ttdef"><b>Definition:</b> game.cpp:65</div></div>
 <div class="ttc" id="aclass_game_html_a7f57a7a8408e554d0a72882c287e1d04acff9d04a8a29792d319be9177afb8ba3"><div class="ttname"><a href="class_game.html#a7f57a7a8408e554d0a72882c287e1d04acff9d04a8a29792d319be9177afb8ba3">Game::GameState::ONGOING</a></div><div class="ttdeci">@ ONGOING</div></div>
 <div class="ttc" id="aclass_game_html_a7f57a7a8408e554d0a72882c287e1d04af5510628674954adec0382d1549b63a8"><div class="ttname"><a href="class_game.html#a7f57a7a8408e554d0a72882c287e1d04af5510628674954adec0382d1549b63a8">Game::GameState::WON</a></div><div class="ttdeci">@ WON</div></div>
-<div class="ttc" id="aclass_game_html_a48f654cf6684826946dee3907da8d55b"><div class="ttname"><a href="class_game.html#a48f654cf6684826946dee3907da8d55b">Game::textToPrint</a></div><div class="ttdeci">QString textToPrint(int i, int j, QString &amp;styleSheet)</div><div class="ttdoc">Provides text to display on the cell.</div><div class="ttdef"><b>Definition:</b> game.cpp:183</div></div>
-<div class="ttc" id="aclass_game_html_a6029a76d14055c12ee0dab75a384db9f"><div class="ttname"><a href="class_game.html#a6029a76d14055c12ee0dab75a384db9f">Game::flag</a></div><div class="ttdeci">bool flag(int i, int j)</div><div class="ttdoc">Flag or unflag a cell.</div><div class="ttdef"><b>Definition:</b> game.cpp:170</div></div>
+<div class="ttc" id="aclass_game_html_a48f654cf6684826946dee3907da8d55b"><div class="ttname"><a href="class_game.html#a48f654cf6684826946dee3907da8d55b">Game::textToPrint</a></div><div class="ttdeci">QString textToPrint(int i, int j, QString &amp;styleSheet)</div><div class="ttdoc">Provides text to display on the cell.</div><div class="ttdef"><b>Definition:</b> game.cpp:185</div></div>
+<div class="ttc" id="aclass_game_html_a6029a76d14055c12ee0dab75a384db9f"><div class="ttname"><a href="class_game.html#a6029a76d14055c12ee0dab75a384db9f">Game::flag</a></div><div class="ttdeci">bool flag(int i, int j)</div><div class="ttdoc">Flag or unflag a cell.</div><div class="ttdef"><b>Definition:</b> game.cpp:172</div></div>
 <div class="ttc" id="aclass_game_html_a6e2176b27be2ebd7aa4732de8a369d4b"><div class="ttname"><a href="class_game.html#a6e2176b27be2ebd7aa4732de8a369d4b">Game::height</a></div><div class="ttdeci">int height() const</div><div class="ttdoc">Getter of m_height.</div><div class="ttdef"><b>Definition:</b> game.cpp:55</div></div>
 <div class="ttc" id="aclass_cell_html"><div class="ttname"><a href="class_cell.html">Cell</a></div><div class="ttdoc">Stores info of a cell.</div><div class="ttdef"><b>Definition:</b> cell.h:11</div></div>
 <div class="ttc" id="aclass_game_html_a4f98f137600d6204cba0e4bd8dd1c373"><div class="ttname"><a href="class_game.html#a4f98f137600d6204cba0e4bd8dd1c373">Game::started</a></div><div class="ttdeci">bool started() const</div><div class="ttdoc">Getter of m_started.</div><div class="ttdef"><b>Definition:</b> game.cpp:33</div></div>
 <div class="ttc" id="aclass_game_html_a7f57a7a8408e554d0a72882c287e1d04ac6daca30aef2af1d72715733825806a3"><div class="ttname"><a href="class_game.html#a7f57a7a8408e554d0a72882c287e1d04ac6daca30aef2af1d72715733825806a3">Game::GameState::LOST</a></div><div class="ttdeci">@ LOST</div></div>
 <div class="ttc" id="aclass_game_html_ad1d089bf4c7f812b3745a2240213e2f3"><div class="ttname"><a href="class_game.html#ad1d089bf4c7f812b3745a2240213e2f3">Game::Game</a></div><div class="ttdeci">Game(int width, int height, int mineNumber)</div><div class="ttdoc">Class constructor Initializes members.</div><div class="ttdef"><b>Definition:</b> game.cpp:6</div></div>
-<div class="ttc" id="aclass_game_html_a402bacbd9ba570fe99cae78a34c696f9"><div class="ttname"><a href="class_game.html#a402bacbd9ba570fe99cae78a34c696f9">Game::discover</a></div><div class="ttdeci">bool discover(int i, int j)</div><div class="ttdoc">Discovers a cell.</div><div class="ttdef"><b>Definition:</b> game.cpp:127</div></div>
-<div class="ttc" id="aclass_game_html_a16974a676f5efb14a3ed8df863df433f"><div class="ttname"><a href="class_game.html#a16974a676f5efb14a3ed8df863df433f">Game::cellIsDiscovered</a></div><div class="ttdeci">bool cellIsDiscovered(int i, int j)</div><div class="ttdoc">Indicates if a cell is discovered.</div><div class="ttdef"><b>Definition:</b> game.cpp:188</div></div>
+<div class="ttc" id="aclass_game_html_a402bacbd9ba570fe99cae78a34c696f9"><div class="ttname"><a href="class_game.html#a402bacbd9ba570fe99cae78a34c696f9">Game::discover</a></div><div class="ttdeci">bool discover(int i, int j)</div><div class="ttdoc">Discovers a cell.</div><div class="ttdef"><b>Definition:</b> game.cpp:128</div></div>
+<div class="ttc" id="aclass_game_html_a16974a676f5efb14a3ed8df863df433f"><div class="ttname"><a href="class_game.html#a16974a676f5efb14a3ed8df863df433f">Game::cellIsDiscovered</a></div><div class="ttdeci">bool cellIsDiscovered(int i, int j)</div><div class="ttdoc">Indicates if a cell is discovered.</div><div class="ttdef"><b>Definition:</b> game.cpp:190</div></div>
 <div class="ttc" id="aclass_game_html_ae3d112ca6e0e55150d2fdbc704474530"><div class="ttname"><a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">Game::~Game</a></div><div class="ttdeci">virtual ~Game()</div><div class="ttdoc">Default destructor.</div><div class="ttdef"><b>Definition:</b> game.cpp:25</div></div>
 <div class="ttc" id="aclass_game_html_a69cf2b906c49b82dd8c9de1b5f2c7ac1"><div class="ttname"><a href="class_game.html#a69cf2b906c49b82dd8c9de1b5f2c7ac1">Game::width</a></div><div class="ttdeci">int width() const</div><div class="ttdoc">Getter of m_width.</div><div class="ttdef"><b>Definition:</b> game.cpp:50</div></div>
 <div class="ttc" id="acell_8h_html"><div class="ttname"><a href="cell_8h.html">cell.h</a></div></div>

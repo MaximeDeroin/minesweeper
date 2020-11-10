@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_123',['value',['../class_parameter.html#ad83ff48609b82dcc828d9c426d57e5b8',1,'Parameter']]]
+  ['texttoprint_149',['textToPrint',['../class_cell.html#a3d9639684efa8e35f63067ebda2dc68d',1,'Cell::textToPrint()'],['../class_game.html#a48f654cf6684826946dee3907da8d55b',1,'Game::textToPrint()']]]
 ];

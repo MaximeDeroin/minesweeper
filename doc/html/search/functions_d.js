@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['setbutton_112',['setButton',['../class_square_widget.html#ac8398edf006b699e48cce468f4cbcafa',1,'SquareWidget']]],
-  ['sethasmine_113',['setHasMine',['../class_cell.html#a853d2f5a9d9ca36cefbdbc733f444464',1,'Cell']]],
-  ['setisclickable_114',['setIsClickable',['../class_square_widget.html#acdd1d2c98f343ce86550ec8fcfe122f6',1,'SquareWidget']]],
-  ['setisdiscovered_115',['setIsDiscovered',['../class_cell.html#a7bfa375db308355b6d4b3b9fb9919673',1,'Cell']]],
-  ['setnumberofadjacentmines_116',['setNumberOfAdjacentMines',['../class_cell.html#a84feae86eab156ee40511e9c2ee3337c',1,'Cell']]],
-  ['setvalue_117',['setValue',['../class_parameter.html#aa04f82fff06052cac5fc53c0b9e18d82',1,'Parameter']]],
-  ['squarewidget_118',['SquareWidget',['../class_square_widget.html#a3d86a65b0ecb471174a8b80a4f8a72d0',1,'SquareWidget']]],
-  ['startagame_119',['startAGame',['../class_menu_window.html#a5e0b0b8784c80569db08ee93d88412f9',1,'MenuWindow']]],
-  ['started_120',['started',['../class_game.html#a4f98f137600d6204cba0e4bd8dd1c373',1,'Game']]],
-  ['startgame_121',['startGame',['../class_game.html#afd35876758450ade8afdf700d5b59dcf',1,'Game']]]
+  ['repaintbutton_131',['repaintButton',['../class_cell_button.html#a8d7323ae10fe2e9524473d162ed63964',1,'CellButton']]],
+  ['restartbutton_132',['restartButton',['../class_game_window.html#a4597c450b4c1e59b09d74f3a66255310',1,'GameWindow']]],
+  ['restartgame_133',['restartGame',['../class_game_window.html#a0f741ae1b9d8d0fa89b8115a0744f513',1,'GameWindow']]],
+  ['restartgameclicked_134',['restartGameClicked',['../class_gui_manager.html#a6d3b9ce029aed08132a7407c73e4b7fc',1,'GuiManager']]],
+  ['returnbutton_135',['returnButton',['../class_game_window.html#a8da6664874c56926c80ab5a69f71cb95',1,'GameWindow']]],
+  ['returntomenu_136',['returnToMenu',['../class_game_window.html#ac1975bc820e6876eb30bfbbbdc35efa2',1,'GameWindow']]],
+  ['rightclicked_137',['rightClicked',['../class_cell_button.html#acc9915f2cd93748d96d3cb851e4c1d63',1,'CellButton::rightClicked()'],['../class_square_widget.html#ac495597e0b01b75f5a75f7aeaccfd467',1,'SquareWidget::rightClicked()']]]
 ];

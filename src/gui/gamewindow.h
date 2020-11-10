@@ -14,7 +14,7 @@
 #include "../data/cell.h"
 
 /*!
- * @brief Manages the game widow
+ * @brief Manages the game window
  */
 class GameWindow : public QWidget
 {
@@ -40,8 +40,14 @@ public:
     QPushButton *returnButton() const; //!< Getter of m_returnButton
 
 signals:
+    /*!
+     * \brief Indicates that the "Return to menu" button is pressed
+     */
     void returnToMenu();
 
+    /*!
+     * \brief Indicates that the "Start new game" button is pressed
+     */
     void restartGame(int width, int height, int mineNumber);
 
 public slots:

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>minesweeper: src/gui/menuwindow.h Source File</title>
+<title>minesweeper: D:/Maxime/Documents/code/github/minesweeper/src/gui/menuwindow.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">minesweeper
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -87,39 +87,46 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_menu_window.html#a8b0827e31f1373dde6f48a944ac32f3e">MenuWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_menu_window.html#a5e0b0b8784c80569db08ee93d88412f9">startAGame</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_parameter.html">Parameter</a>* m_gameWidth; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_parameter.html">Parameter</a>* m_gameHeight; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_parameter.html">Parameter</a>* m_gameMineNumber; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_menu_window.html#a4d0cdde7f18e38d2ab0c2fab21d37970">~MenuWindow</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_menu_window.html#a5e0b0b8784c80569db08ee93d88412f9">startAGame</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QPushButton* m_playButton; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QPushButton* m_quitButton; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    QVBoxLayout* m_mainLayout; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> createParameters();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> setMenu();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> createMenuButtons();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> createMenuLayout();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> connectMenuButtons();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // MENUWINDOW_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;signals:</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_menu_window.html#a71034c3ed07effc79719e5e98aeafdf2">   43</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_menu_window.html#a71034c3ed07effc79719e5e98aeafdf2">newGame</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> mineNumber);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_parameter.html">Parameter</a>* m_gameWidth; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_parameter.html">Parameter</a>* m_gameHeight; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_parameter.html">Parameter</a>* m_gameMineNumber; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QPushButton* m_playButton; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QPushButton* m_quitButton; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QVBoxLayout* m_mainLayout; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> createParameters();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> setMenu();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> createMenuButtons();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> createMenuLayout();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> connectMenuButtons();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif // MENUWINDOW_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_menu_window_html"><div class="ttname"><a href="class_menu_window.html">MenuWindow</a></div><div class="ttdoc">Manages the menu gui.</div><div class="ttdef"><b>Definition:</b> menuwindow.h:16</div></div>
 <div class="ttc" id="aclass_parameter_html"><div class="ttname"><a href="class_parameter.html">Parameter</a></div><div class="ttdoc">Manages a parameter in the gui.</div><div class="ttdef"><b>Definition:</b> parameter.h:15</div></div>
-<div class="ttc" id="aclass_menu_window_html_a8b0827e31f1373dde6f48a944ac32f3e"><div class="ttname"><a href="class_menu_window.html#a8b0827e31f1373dde6f48a944ac32f3e">MenuWindow::MenuWindow</a></div><div class="ttdeci">MenuWindow(QWidget *parent=nullptr)</div><div class="ttdoc">Class constructor.</div><div class="ttdef"><b>Definition:</b> menuwindow.cpp:6</div></div>
+<div class="ttc" id="aclass_menu_window_html_a8b0827e31f1373dde6f48a944ac32f3e"><div class="ttname"><a href="class_menu_window.html#a8b0827e31f1373dde6f48a944ac32f3e">MenuWindow::MenuWindow</a></div><div class="ttdeci">MenuWindow(QWidget *parent=nullptr)</div><div class="ttdoc">Class constructor.</div><div class="ttdef"><b>Definition:</b> menuwindow.cpp:4</div></div>
 <div class="ttc" id="aparameter_8h_html"><div class="ttname"><a href="parameter_8h.html">parameter.h</a></div></div>
+<div class="ttc" id="aclass_menu_window_html_a71034c3ed07effc79719e5e98aeafdf2"><div class="ttname"><a href="class_menu_window.html#a71034c3ed07effc79719e5e98aeafdf2">MenuWindow::newGame</a></div><div class="ttdeci">void newGame(int width, int height, int mineNumber)</div><div class="ttdoc">Requests a new game.</div></div>
+<div class="ttc" id="aclass_menu_window_html_a4d0cdde7f18e38d2ab0c2fab21d37970"><div class="ttname"><a href="class_menu_window.html#a4d0cdde7f18e38d2ab0c2fab21d37970">MenuWindow::~MenuWindow</a></div><div class="ttdeci">virtual ~MenuWindow()</div><div class="ttdoc">Default destructor.</div><div class="ttdef"><b>Definition:</b> menuwindow.cpp:13</div></div>
 <div class="ttc" id="agamewindow_8h_html"><div class="ttname"><a href="gamewindow_8h.html">gamewindow.h</a></div></div>
-<div class="ttc" id="aclass_menu_window_html_a5e0b0b8784c80569db08ee93d88412f9"><div class="ttname"><a href="class_menu_window.html#a5e0b0b8784c80569db08ee93d88412f9">MenuWindow::startAGame</a></div><div class="ttdeci">void startAGame()</div><div class="ttdoc">Starts a game.</div><div class="ttdef"><b>Definition:</b> menuwindow.cpp:16</div></div>
+<div class="ttc" id="aclass_menu_window_html_a5e0b0b8784c80569db08ee93d88412f9"><div class="ttname"><a href="class_menu_window.html#a5e0b0b8784c80569db08ee93d88412f9">MenuWindow::startAGame</a></div><div class="ttdeci">void startAGame()</div><div class="ttdoc">Starts a game.</div><div class="ttdef"><b>Definition:</b> menuwindow.cpp:18</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
