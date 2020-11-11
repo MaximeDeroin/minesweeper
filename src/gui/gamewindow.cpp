@@ -80,7 +80,8 @@ void GameWindow::repaintGame()
         for (int j=0; j<m_gameWidth; j++)
         {
             QString styleSheet;
-            QString text(m_game->textToPrint(i, j, styleSheet));
+            CellButton* cellButton = squareWidget(i,j)->button();
+            QString text(cellButton->textToPrint(m_game->cell(i,j), styleSheet));
             bool celltoDisable(m_game->cellIsDiscovered(i, j));
             squareWidget(i,j)->button()->repaintButton(text, styleSheet, celltoDisable);
         }

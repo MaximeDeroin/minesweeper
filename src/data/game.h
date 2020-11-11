@@ -67,15 +67,6 @@ public:
     bool flag(int i, int j);
 
     /*!
-     * @brief Provides text to display on the cell.
-     * @param[in] i Row number of the cell
-     * @param[in] j Column number of the cell
-     * @param[out] styleSheet Style of the text
-     * @return Text to print on the cell
-     */
-    QString textToPrint(int i, int j, QString &styleSheet);
-
-    /*!
      * @brief Indicates if a cell is discovered
      * @param[in] i Row number of the cell
      * @param[in] j Column number of the cell
@@ -83,10 +74,19 @@ public:
      */
     bool cellIsDiscovered(int i, int j);
 
-    /**
+    /*!
      * @brief Displays cells with a mine
      */
     void showMinePositions();
+
+    /*!
+     * @brief Getter of a cell
+     * @param[in] i Row number of the cell
+     * @param[in] j Column number of the cell
+     * @return Cell to access. nullptr if (i,j) is not in grid
+     * @details Used to increase code readability
+     */
+     Cell* cell(int i, int j) const;
 
 private:
     bool m_started; //!< Indicates if the game is started
@@ -154,14 +154,6 @@ private:
      */
     int getNeighborNumber(int i, int j);
 
-    /*!
-     * @brief Getter of a cell
-     * @param[in] i Row number of the cell
-     * @param[in] j Column number of the cell
-     * @return Cell to access. nullptr if (i,j) is not in grid
-     * @details Used to increase code readability
-     */
-    Cell* cell(int i, int j) const;
 };
 
 #endif // GAME_H

@@ -182,11 +182,6 @@ bool Game::flag(int i, int j)
     return cellIsNowFlagged;
 }
 
-QString Game::textToPrint(int i, int j, QString& styleSheet)
-{
-    return cell(i,j)->textToPrint(styleSheet);
-}
-
 bool Game::cellIsDiscovered(int i, int j)
 {
     if (isInBoard(i,j))

@@ -33,29 +33,11 @@ public:
      */
     bool changeFlagStatus();
 
-    /*!
-     * @brief Provides text to display on the cell.
-     * Returns m_numberOfAdjacentMines if it is from 1 to 8
-     * Return space id m_numberOfAdjacentMines = 0
-     * Returns F is the cell is flagged (m_isFlagged = true)
-     * @param[out] styleSheet Style of the text
-     * @todo Check if this process should be done in the gui classes
-     * @return Text to print on the cell
-     */
-    QString textToPrint(QString &styleSheet);
-
 private:
     bool m_hasMine; //!< Indicates if the cell contains a mine
     int m_numberOfAdjacentMines; //!< Contains the number of adjacent cells with a mine
     bool m_isFlagged; //!< Indicates if the cell is currently flagged
     bool m_isDiscovered; //!< Indicates if the cell has been discovered
-
-    /*!
-     * @brief Provides color of the text to display on the cell
-     * @todo Check if this process should be done in the gui classes
-     * @return Color of the text to display on the cell
-     */
-    QColor textColor();
 };
 
 #endif // CELL_H
