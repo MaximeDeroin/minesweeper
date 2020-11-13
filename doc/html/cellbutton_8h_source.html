@@ -75,35 +75,45 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QMouseEvent&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_cell_button.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cell_button.html">CellButton</a> : <span class="keyword">public</span> QPushButton</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_cell_button.html#a136b41b6773170f2003677474e7ecb84">CellButton</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_cell_button.html#a8d7323ae10fe2e9524473d162ed63964">repaintButton</a>(<span class="keyword">const</span> QString&amp; text, <span class="keyword">const</span> QString&amp; styleSheet, <span class="keywordtype">bool</span> disable);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> mousePressEvent(QMouseEvent* event) Q_DECL_OVERRIDE;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;signals:</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_cell_button.html#acc9915f2cd93748d96d3cb851e4c1d63">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_cell_button.html#acc9915f2cd93748d96d3cb851e4c1d63">rightClicked</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> drawFlag();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> BUTTON_SIZE = 30; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif // CELLBUTTON_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cell_8h.html">data/cell.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_cell_button.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cell_button.html">CellButton</a> : <span class="keyword">public</span> QPushButton</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_cell_button.html#a136b41b6773170f2003677474e7ecb84">CellButton</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_cell_button.html#a8d7323ae10fe2e9524473d162ed63964">repaintButton</a>(<span class="keyword">const</span> QString&amp; text, <span class="keyword">const</span> QString&amp; styleSheet, <span class="keywordtype">bool</span> disable);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QString <a class="code" href="class_cell_button.html#afff0b60360e98aed89caec17d6668dbf">textToPrint</a>(<a class="code" href="class_cell.html">Cell</a> <span class="keyword">const</span>* cell, QString&amp; styleSheet);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    QColor <a class="code" href="class_cell_button.html#ac0e39d13122731d68007790320a06c2f">textColor</a>(<span class="keywordtype">int</span> numberToDisplay);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> mousePressEvent(QMouseEvent* event) Q_DECL_OVERRIDE;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;signals:</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_cell_button.html#acc9915f2cd93748d96d3cb851e4c1d63">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_cell_button.html#acc9915f2cd93748d96d3cb851e4c1d63">rightClicked</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> drawFlag();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> BUTTON_SIZE = 30; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> TEXT_SIZE = 14; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // CELLBUTTON_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_cell_button_html_a136b41b6773170f2003677474e7ecb84"><div class="ttname"><a href="class_cell_button.html#a136b41b6773170f2003677474e7ecb84">CellButton::CellButton</a></div><div class="ttdeci">CellButton()</div><div class="ttdoc">Class constructor.</div><div class="ttdef"><b>Definition:</b> cellbutton.cpp:3</div></div>
-<div class="ttc" id="aclass_cell_button_html"><div class="ttname"><a href="class_cell_button.html">CellButton</a></div><div class="ttdoc">Button that displays the state of a cell button.</div><div class="ttdef"><b>Definition:</b> cellbutton.h:11</div></div>
+<div class="ttc" id="aclass_cell_button_html"><div class="ttname"><a href="class_cell_button.html">CellButton</a></div><div class="ttdoc">Button that displays the state of a cell button.</div><div class="ttdef"><b>Definition:</b> cellbutton.h:12</div></div>
+<div class="ttc" id="aclass_cell_button_html_afff0b60360e98aed89caec17d6668dbf"><div class="ttname"><a href="class_cell_button.html#afff0b60360e98aed89caec17d6668dbf">CellButton::textToPrint</a></div><div class="ttdeci">QString textToPrint(Cell const *cell, QString &amp;styleSheet)</div><div class="ttdoc">Computes text to display for a cell.</div><div class="ttdef"><b>Definition:</b> cellbutton.cpp:45</div></div>
+<div class="ttc" id="aclass_cell_html"><div class="ttname"><a href="class_cell.html">Cell</a></div><div class="ttdoc">Stores info of a cell.</div><div class="ttdef"><b>Definition:</b> cell.h:11</div></div>
 <div class="ttc" id="aclass_cell_button_html_a8d7323ae10fe2e9524473d162ed63964"><div class="ttname"><a href="class_cell_button.html#a8d7323ae10fe2e9524473d162ed63964">CellButton::repaintButton</a></div><div class="ttdeci">void repaintButton(const QString &amp;text, const QString &amp;styleSheet, bool disable)</div><div class="ttdoc">Refreshes cell display.</div><div class="ttdef"><b>Definition:</b> cellbutton.cpp:9</div></div>
 <div class="ttc" id="aclass_cell_button_html_acc9915f2cd93748d96d3cb851e4c1d63"><div class="ttname"><a href="class_cell_button.html#acc9915f2cd93748d96d3cb851e4c1d63">CellButton::rightClicked</a></div><div class="ttdeci">void rightClicked()</div><div class="ttdoc">rightClicked Indicates that the cell was right clicked</div></div>
+<div class="ttc" id="aclass_cell_button_html_ac0e39d13122731d68007790320a06c2f"><div class="ttname"><a href="class_cell_button.html#ac0e39d13122731d68007790320a06c2f">CellButton::textColor</a></div><div class="ttdeci">QColor textColor(int numberToDisplay)</div><div class="ttdoc">Provides color of the text to display on the cell.</div><div class="ttdef"><b>Definition:</b> cellbutton.cpp:79</div></div>
+<div class="ttc" id="acell_8h_html"><div class="ttname"><a href="cell_8h.html">cell.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

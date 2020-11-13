@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cell_1',['Cell',['../class_cell.html',1,'Cell'],['../class_cell.html#a394510643e8664cf12b5efaf5cb99f71',1,'Cell::Cell()']]],
+  ['cell_1',['Cell',['../class_cell.html',1,'Cell'],['../class_game.html#ad7bd925b02835477442ed92aacd0fc44',1,'Game::cell()'],['../class_cell.html#a394510643e8664cf12b5efaf5cb99f71',1,'Cell::Cell()']]],
   ['cell_2ecpp_2',['cell.cpp',['../cell_8cpp.html',1,'']]],
   ['cell_2eh_3',['cell.h',['../cell_8h.html',1,'']]],
   ['cellbutton_4',['CellButton',['../class_cell_button.html',1,'CellButton'],['../class_cell_button.html#a136b41b6773170f2003677474e7ecb84',1,'CellButton::CellButton()']]],

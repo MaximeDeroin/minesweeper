@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['texttoprint_66',['textToPrint',['../class_cell.html#a3d9639684efa8e35f63067ebda2dc68d',1,'Cell::textToPrint()'],['../class_game.html#a48f654cf6684826946dee3907da8d55b',1,'Game::textToPrint()']]],
-  ['todo_20list_67',['Todo List',['../todo.html',1,'']]]
+  ['textcolor_66',['textColor',['../class_cell_button.html#ac0e39d13122731d68007790320a06c2f',1,'CellButton']]],
+  ['texttoprint_67',['textToPrint',['../class_cell_button.html#afff0b60360e98aed89caec17d6668dbf',1,'CellButton']]]
 ];

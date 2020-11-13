@@ -94,24 +94,19 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#ac1c6b138a8bd469184e9d6ed56617b7e">changeFlagStatus</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    QString <a class="code" href="class_cell.html#a3d9639684efa8e35f63067ebda2dc68d">textToPrint</a>(QString &amp;styleSheet);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> m_hasMine; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">int</span> m_numberOfAdjacentMines; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> m_isFlagged; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> m_isDiscovered; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QColor textColor();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif // CELL_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> m_hasMine; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> m_numberOfAdjacentMines; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> m_isFlagged; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> m_isDiscovered; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif // CELL_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_cell_html_ac1c6b138a8bd469184e9d6ed56617b7e"><div class="ttname"><a href="class_cell.html#ac1c6b138a8bd469184e9d6ed56617b7e">Cell::changeFlagStatus</a></div><div class="ttdeci">bool changeFlagStatus()</div><div class="ttdoc">Changes value of m_isFlagged (switch between true and false)</div><div class="ttdef"><b>Definition:</b> cell.cpp:47</div></div>
 <div class="ttc" id="aclass_cell_html_a853d2f5a9d9ca36cefbdbc733f444464"><div class="ttname"><a href="class_cell.html#a853d2f5a9d9ca36cefbdbc733f444464">Cell::setHasMine</a></div><div class="ttdeci">void setHasMine(bool hasMine)</div><div class="ttdoc">Setter of m_hasMine.</div><div class="ttdef"><b>Definition:</b> cell.cpp:17</div></div>
 <div class="ttc" id="aclass_cell_html_a955e7730cb304456733f831770ad70ac"><div class="ttname"><a href="class_cell.html#a955e7730cb304456733f831770ad70ac">Cell::numberOfAdjacentMines</a></div><div class="ttdeci">int numberOfAdjacentMines() const</div><div class="ttdoc">Getter of m_numberOfAdjacentMines.</div><div class="ttdef"><b>Definition:</b> cell.cpp:22</div></div>
 <div class="ttc" id="aclass_cell_html"><div class="ttname"><a href="class_cell.html">Cell</a></div><div class="ttdoc">Stores info of a cell.</div><div class="ttdef"><b>Definition:</b> cell.h:11</div></div>
-<div class="ttc" id="aclass_cell_html_a3d9639684efa8e35f63067ebda2dc68d"><div class="ttname"><a href="class_cell.html#a3d9639684efa8e35f63067ebda2dc68d">Cell::textToPrint</a></div><div class="ttdeci">QString textToPrint(QString &amp;styleSheet)</div><div class="ttdoc">Provides text to display on the cell. Returns m_numberOfAdjacentMines if it is from 1 to 8 Return spa...</div><div class="ttdef"><b>Definition:</b> cell.cpp:53</div></div>
 <div class="ttc" id="aclass_cell_html_a0dfe198d4b4d3ab5fc812f57da746367"><div class="ttname"><a href="class_cell.html#a0dfe198d4b4d3ab5fc812f57da746367">Cell::isDiscovered</a></div><div class="ttdeci">bool isDiscovered() const</div><div class="ttdoc">Getter of m_isDiscovered.</div><div class="ttdef"><b>Definition:</b> cell.cpp:37</div></div>
 <div class="ttc" id="aclass_cell_html_a7767d6d6077322cb2b85e552f0e9ae90"><div class="ttname"><a href="class_cell.html#a7767d6d6077322cb2b85e552f0e9ae90">Cell::isFlagged</a></div><div class="ttdeci">bool isFlagged() const</div><div class="ttdoc">Getter of m_isFlagged.</div><div class="ttdef"><b>Definition:</b> cell.cpp:32</div></div>
 <div class="ttc" id="aclass_cell_html_a88904f7e191ddec45bb022110673c544"><div class="ttname"><a href="class_cell.html#a88904f7e191ddec45bb022110673c544">Cell::hasMine</a></div><div class="ttdeci">bool hasMine() const</div><div class="ttdoc">Getter of m_hasMine.</div><div class="ttdef"><b>Definition:</b> cell.cpp:12</div></div>

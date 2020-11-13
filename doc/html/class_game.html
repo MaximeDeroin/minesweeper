@@ -120,15 +120,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6029a76d14055c12ee0dab75a384db9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6029a76d14055c12ee0dab75a384db9f">flag</a> (int i, int j)</td></tr>
 <tr class="memdesc:a6029a76d14055c12ee0dab75a384db9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag or unflag a cell.  <a href="class_game.html#a6029a76d14055c12ee0dab75a384db9f">More...</a><br /></td></tr>
 <tr class="separator:a6029a76d14055c12ee0dab75a384db9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48f654cf6684826946dee3907da8d55b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a48f654cf6684826946dee3907da8d55b">textToPrint</a> (int i, int j, QString &amp;styleSheet)</td></tr>
-<tr class="memdesc:a48f654cf6684826946dee3907da8d55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides text to display on the cell.  <a href="class_game.html#a48f654cf6684826946dee3907da8d55b">More...</a><br /></td></tr>
-<tr class="separator:a48f654cf6684826946dee3907da8d55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16974a676f5efb14a3ed8df863df433f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a16974a676f5efb14a3ed8df863df433f">cellIsDiscovered</a> (int i, int j)</td></tr>
 <tr class="memdesc:a16974a676f5efb14a3ed8df863df433f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if a cell is discovered.  <a href="class_game.html#a16974a676f5efb14a3ed8df863df433f">More...</a><br /></td></tr>
 <tr class="separator:a16974a676f5efb14a3ed8df863df433f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81de1ffdc3ab145f124bb0be896ee9fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a81de1ffdc3ab145f124bb0be896ee9fe">showMinePositions</a> ()</td></tr>
 <tr class="memdesc:a81de1ffdc3ab145f124bb0be896ee9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays cells with a mine.  <a href="class_game.html#a81de1ffdc3ab145f124bb0be896ee9fe">More...</a><br /></td></tr>
 <tr class="separator:a81de1ffdc3ab145f124bb0be896ee9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7bd925b02835477442ed92aacd0fc44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad7bd925b02835477442ed92aacd0fc44">cell</a> (int i, int j) const</td></tr>
+<tr class="memdesc:ad7bd925b02835477442ed92aacd0fc44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of a cell.  <a href="class_game.html#ad7bd925b02835477442ed92aacd0fc44">More...</a><br /></td></tr>
+<tr class="separator:ad7bd925b02835477442ed92aacd0fc44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stores info of a game. </p>
@@ -243,6 +243,44 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad7bd925b02835477442ed92aacd0fc44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7bd925b02835477442ed92aacd0fc44">&#9670;&nbsp;</a></span>cell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a> * Game::cell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter of a cell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>Row number of the cell </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>Column number of the cell </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_cell.html" title="Stores info of a cell.">Cell</a> to access. nullptr if (i,j) is not in grid  Used to increase code readability </dd></dl>
+
+</div>
+</div>
 <a id="a16974a676f5efb14a3ed8df863df433f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16974a676f5efb14a3ed8df863df433f">&#9670;&nbsp;</a></span>cellIsDiscovered()</h2>
 
@@ -505,51 +543,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a48f654cf6684826946dee3907da8d55b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48f654cf6684826946dee3907da8d55b">&#9670;&nbsp;</a></span>textToPrint()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString Game::textToPrint </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QString &amp;&#160;</td>
-          <td class="paramname"><em>styleSheet</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Provides text to display on the cell. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>Row number of the cell </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>Column number of the cell </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">styleSheet</td><td>Style of the text </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Text to print on the cell </dd></dl>
 
 </div>
 </div>
