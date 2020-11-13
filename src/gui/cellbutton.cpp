@@ -44,7 +44,7 @@ void CellButton::mousePressEvent(QMouseEvent* event)
 
 QString CellButton::textToPrint(Cell const* cell, QString& styleSheet)
 {
-    styleSheet = "font-size: 14pt;font-weight: bold";
+    styleSheet = "font-size: "+QString::number(TEXT_SIZE)+"pt;font-weight: bold";
     int numberOfAdjacentMines = cell->numberOfAdjacentMines();
     if (cell->isDiscovered())
     {

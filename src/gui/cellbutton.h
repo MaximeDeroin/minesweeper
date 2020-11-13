@@ -62,6 +62,7 @@ private:
     void drawFlag();
 
     int BUTTON_SIZE = 30; //!< Cell size in number of pixels
+    int TEXT_SIZE = 14; //!< Cell size in number of pixels
 };
 
 #endif // CELLBUTTON_H
