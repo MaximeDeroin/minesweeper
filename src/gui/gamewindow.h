@@ -106,6 +106,11 @@ private:
      * @return Cell widget
      */
     SquareWidget* squareWidget(int i, int j);
+
+    /*!
+     * \brief Disable all cells of the grid
+     */
+    void disableAllCells();
 };
 
 #endif // GAMEWINDOW_H

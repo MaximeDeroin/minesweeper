@@ -23,7 +23,6 @@ public:
     virtual ~SquareWidget();
 
     CellButton* button() const; //!< Getter of m_button
-    void setButton(const QString& newCharacter); //!< Setter of m_button
 
     void setIsClickable(bool isClickable); //!< Setter of m_isClickable
 

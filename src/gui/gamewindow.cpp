@@ -102,11 +102,7 @@ void GameWindow::squareLeftClicked(int i, int j)
     bool gameEnds = m_game->discover(i,j);
     if (gameEnds)
     {
-        for (int i=0; i<m_gameHeight; i++)
-            for (int j=0; j<m_gameWidth; j++)
-            {
-                squareWidget(i,j)->disable();
-            }
+        disableAllCells();
     }
 
     if(m_game->gameState() == Game::GameState::LOST)
@@ -120,6 +116,15 @@ void GameWindow::squareLeftClicked(int i, int j)
     }
 
     repaintGame();
+}
+
+void GameWindow::disableAllCells()
+{
+    for (int i=0; i<m_gameHeight; i++)
+        for (int j=0; j<m_gameWidth; j++)
+        {
+            squareWidget(i,j)->disable();
+        }
 }
 
 void GameWindow::squareRightClicked(int i, int j)

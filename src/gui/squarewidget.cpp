@@ -22,11 +22,6 @@ CellButton* SquareWidget::button() const
     return this->m_button;
 }
 
-void SquareWidget::setButton(const QString& newCharacter)
-{
-    m_button->setText(newCharacter);
-}
-
 void SquareWidget::onLeftClicked()
 {
     if (m_isClickable)
