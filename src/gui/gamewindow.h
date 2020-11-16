@@ -69,7 +69,7 @@ private:
      */
     QVector<SquareWidget*> m_buttons;
 
-    QGridLayout* m_gameLayout; //!< Layout of the game
+    QGridLayout* m_cellLayout; //!< Layout of the game field
 
     Game* m_game; //!< Information of the game
 

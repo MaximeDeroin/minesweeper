@@ -1,6 +1,7 @@
 #include "gamewindow.h"
 #include <iostream>
 #include <QFrame>
+#include <QSpacerItem>
 
 GameWindow::GameWindow(int width, int height, int mineNumber):
     m_gameWidth(width),
@@ -48,8 +49,13 @@ SquareWidget* GameWindow::squareWidget(int i, int j)
 
 void GameWindow::initializeLayout()
 {
+    QSpacerItem* verticalSpacer1(new QSpacerItem(100,100, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    QSpacerItem* verticalSpacer2(new QSpacerItem(100,100, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    QSpacerItem* horizontalSpacer1(new QSpacerItem(100,100, QSizePolicy::Expanding, QSizePolicy::Minimum));
+    QSpacerItem* horizontalSpacer2(new QSpacerItem(100,100, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
     QVBoxLayout* mainLayout(new QVBoxLayout(this));
-    m_gameLayout = new QGridLayout(this);
+    m_cellLayout = new QGridLayout(this);
 
     for (int i=0; i<m_gameHeight; i++)
         for (int j=0; j<m_gameWidth; j++)
@@ -57,21 +63,29 @@ void GameWindow::initializeLayout()
             SquareWidget* button = new SquareWidget(i, j);
             m_buttons.push_back(button);
 
-            m_gameLayout->addWidget(button->button(), i, j);
+            m_cellLayout->addWidget(button->button(), i, j);
 
             connect(button, &SquareWidget::leftClicked, this, &GameWindow::squareLeftClicked);
             connect(button, &SquareWidget::rightClicked, this, &GameWindow::squareRightClicked);
         }
 
-    mainLayout->addLayout(m_gameLayout);
+    QHBoxLayout* fieldLayout(new QHBoxLayout(this));
+    fieldLayout->addSpacerItem(horizontalSpacer1);
+    fieldLayout->addLayout(m_cellLayout);
+    fieldLayout->addSpacerItem(horizontalSpacer2);
+
+    mainLayout->addSpacerItem(verticalSpacer1);
+    mainLayout->addLayout(fieldLayout);
     QFrame *horizontalLine = new QFrame(this);
     horizontalLine->setFrameShape(QFrame::HLine);
     horizontalLine->setFixedHeight(5);
+    mainLayout->addSpacerItem(verticalSpacer2);
+
     mainLayout->addWidget(horizontalLine);
     mainLayout->addWidget(m_restartButton);
     mainLayout->addWidget(m_returnButton);
 
-    this->setLayout(m_gameLayout);
+    this->setLayout(mainLayout);
 }
 
 void GameWindow::repaintGame()

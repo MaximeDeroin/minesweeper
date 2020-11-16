@@ -40,7 +40,7 @@ void GuiManager::newGameClicked(int width, int height, int mineNumber)
     connectGameWindow(newGameWindow);
 
     this->setCurrentIndex(static_cast<int>(Page::GAME));
-    this->setFixedSize(30+30*width, 110+30*height);
+    this->setFixedSize(qMax(400, 30+30*width), qMax(400, 110+30*height));
 }
 
 void GuiManager::quitGameClicked()
