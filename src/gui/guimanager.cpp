@@ -9,6 +9,7 @@ GuiManager::GuiManager():
 {
     this->addWidget(m_menuWindow);
     setFixedSize(400,400);
+    setWindowIcon(QIcon(QPixmap(":/img/mine.png")));
 
     connect(m_menuWindow, &MenuWindow::newGame, this, &GuiManager::newGameClicked);
 
